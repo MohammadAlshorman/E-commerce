@@ -1,0 +1,6 @@
+@Candy_Sweets.Server_HostAddress = http://localhost:5026
+
+GET {{Candy_Sweets.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
