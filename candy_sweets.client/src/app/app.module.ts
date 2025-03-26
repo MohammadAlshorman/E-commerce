@@ -11,6 +11,9 @@ import { CartPageComponent } from './Sofyan/cart-page/cart-page.component';
 import { AdminDashboardComponent } from './Suhaib/admin-dashboard/admin-dashboard.component';
 import { ManageProductsComponent } from './Ahmad/manage-products/manage-products.component';
 import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-categories.component';
+import { NavBarComponent } from './Mohammad/nav-bar/nav-bar.component';
+import { FooterComponent } from './Mohammad/footer/footer.component';
+import { HomeComponent } from './Mohammad/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-c
     CartPageComponent,
     AdminDashboardComponent,
     ManageProductsComponent,
-    ManageCategoriesComponent
+    ManageCategoriesComponent,
+    NavBarComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

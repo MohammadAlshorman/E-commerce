@@ -31,11 +31,10 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+              "src/favicon.ico",
+              "src/assets"
             ],
+           
             "styles": [
               "src/styles.css"
             ],
@@ -95,9 +94,13 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
+
+
             ],
             "styles": [
               "src/styles.css"
+            
+
             ],
             "scripts": [],
             "karmaConfig": "karma.conf.js"
@@ -105,5 +108,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "4c9c0e6d-1568-4bc8-866b-acae9578f4bf"
   }
 }
