@@ -11,6 +11,9 @@ import { ProductDetailsComponent } from './Suleiman/product-details/product-deta
 import { CartPageComponent } from './Sofyan/cart-page/cart-page.component';
 import { AdminDashboardComponent } from './Suhaib/admin-dashboard/admin-dashboard.component';
 import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-categories.component';
+import { ManageProductComponent } from './Ahmad/manage-product/manage-product.component';
+import { NavBarComponent } from './Mohammad/nav-bar/nav-bar.component';
+import { FooterComponent } from './Mohammad/footer/footer.component';
 
 
 @NgModule({
@@ -21,8 +24,10 @@ import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-c
     ProductDetailsComponent,
     CartPageComponent,
     AdminDashboardComponent,
-    ManageProductsComponent,
-    ManageCategoriesComponent
+    ManageProductComponent,
+    ManageCategoriesComponent,
+    NavBarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
