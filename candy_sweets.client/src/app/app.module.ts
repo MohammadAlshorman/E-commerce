@@ -16,6 +16,7 @@ import { NavBarComponent } from './Mohammad/nav-bar/nav-bar.component';
 import { FooterComponent } from './Mohammad/footer/footer.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { FooterComponent } from './Mohammad/footer/footer.component';
     ManageProductComponent,
     ManageCategoriesComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule, HttpClientModule,
