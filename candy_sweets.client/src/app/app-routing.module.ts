@@ -14,7 +14,12 @@ import { CategoryComponent } from './Suleiman/category/category.component';
 import { ProductsComponent } from './Suleiman/products/products.component';
 import { ProductDetailsComponent } from './Suleiman/product-details/product-details.component';
 
+
+ 
+
+
 const routes: Routes = [
+  { path: "", component: HomeComponent },
 
   { path: "", component: HomeComponent },
   { path: 'category', component: CategoryComponent },
@@ -34,6 +39,18 @@ const routes: Routes = [
         { path: 'LastStep', component: LaststageforgetpasswordComponent },
         { path: 'Reset', component: ResetpasswordComponent }
     ]
+  },
+  {
+    path: 'getcategories', component: ManageCategoriesComponent
+  },
+  {
+    path: 'addcategories', component: AddCategorieComponent
+  },
+  {
+    path: 'editcategories/:id', component: EditCategorieComponent
+  },
+  {
+    path: 'getusers', component: GetUsersComponent
   }
   
 ];
