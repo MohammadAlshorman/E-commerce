@@ -1,11 +1,26 @@
-<p>profile works!</p>
-<div class="container" *ngIf="user">
-  <h1>User Profile</h1>
-  <p><strong>Name:</strong> {{ user.name }}</p>
-  <p><strong>Email:</strong> {{ user.email }}</p>
-  <p><strong>Address:</strong> {{ user.address }}</p>
-  <p><strong>Phone:</strong> {{ user.phone }}</p>
-  <img [src]="user.image" alt="User Image" width="150" height="150">
-  <a routerLink="/Home/EditProfile">Edit Profile</a>
-  <button (click)="logout()">Logout </button>
+<div class="Profile_container">
+  <div class="container" *ngIf="user">
+    <h1 class="title">User Profile</h1>
+    <div class="user-details">
+      <div class="detail-box">
+        <p><span class="details"><strong>Name:</strong></span> {{ user.name }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Email:</strong></span> {{ user.email }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Address:</strong></span> {{ user.address }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Phone:</strong></span> {{ user.phone }}</p>
+      </div>
+      <div class="detail-box">
+        <img [src]="user.image" alt="User Image" class="profile-image">
+      </div>
+    </div>
+    <div class="button">
+      <a routerLink="/Home/EditProfile" class="pink-button">Edit Profile</a>
+      <button class="pink-button" (click)="logout()">Logout</button>
+    </div>
+  </div>
 </div>

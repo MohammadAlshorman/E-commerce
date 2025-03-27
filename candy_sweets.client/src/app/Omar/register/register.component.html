@@ -1,29 +1,50 @@
-<p>register works!</p>
+<div class="Reigster_container">
 
-<form #newuser="ngForm" (ngSubmit)="adduser(newuser.value)">
-  <div class="mb-3">
-    <label class="form-label">Name:</label>
-    <input type="text" class="form-control" name="name" ngModel>
+
+  <div class="container">
+    <!-- Title section -->
+    <div class="title">It is Lovely to have you with US.</div>
+    <div class="content">
+      <!-- Registration form -->
+      <form #newuser="ngForm" (ngSubmit)="adduser(newuser.value)">
+        <div class="user-details">
+          <!-- Input for Full Name -->
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" name="name" ngModel required>
+          </div>
+          <!-- Input for Username -->
+          <div class="input-box">
+            <span class="details">Gender</span>
+            <input type="text" placeholder="Enter your Gender" name="Gender" ngModel required>
+          </div>
+          <!-- Input for Email -->
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" placeholder="Enter your email" name="email" ngModel required>
+          </div>
+          <!-- Input for Phone Number -->
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your Phone number" name="phone" ngModel required>
+          </div>
+          <!-- Input for Password -->
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" placeholder="Enter your password" name="password" ngModel required>
+          </div>
+          <!-- Input for Confirm Password -->
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" placeholder="Confirm your password" required>
+          </div>
+        </div>
+
+        <!-- Submit button -->
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="mb-3">
-    <label class="form-label">Email:</label>
-    <input type="email" class="form-control" name="email" ngModel>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Password</label>
-    <input type="text" class="form-control" name="password" ngModel>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Address:</label>
-    <input type="text" class="form-control" name="address" ngModel>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Phone Number:</label>
-    <input type="number" class="form-control" name="phone" ngModel>
-  </div>
-  <div class="mb-3">
-    <label class="form-label">Image:</label>
-    <input type="text" class="form-control" name="image" ngModel>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
