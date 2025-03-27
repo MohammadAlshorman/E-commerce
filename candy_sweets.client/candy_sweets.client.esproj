@@ -11,9 +11,8 @@
     <Folder Include="src\app\Mohammad\" />
     <Folder Include="src\app\Abdallah\" />
     <Folder Include="src\app\Ahmad\" />
-    <Folder Include="src\app\Omar\" />
+    <Folder Include="src\app\Omar\Service_User_API\" />
     <Folder Include="src\app\Suhaib\" />
     <Folder Include="src\app\Sofyan\" />
-    <Folder Include="src\app\Suleiman\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,11 @@
+<p>profile works!</p>
+<div class="container" *ngIf="user">
+  <h1>User Profile</h1>
+  <p><strong>Name:</strong> {{ user.name }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>Address:</strong> {{ user.address }}</p>
+  <p><strong>Phone:</strong> {{ user.phone }}</p>
+  <img [src]="user.image" alt="User Image" width="150" height="150">
+  <a routerLink="/Home/EditProfile">Edit Profile</a>
+  <button (click)="logout()">Logout </button>
+</div>
