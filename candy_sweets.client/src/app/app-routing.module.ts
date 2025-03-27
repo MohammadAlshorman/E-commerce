@@ -10,7 +10,6 @@ import { LoginComponent } from './Omar/login/login.component';
 import { ProfileComponent } from './Omar/profile/profile.component';
 import { RegisterComponent } from './Omar/register/register.component';
 import { ResetpasswordComponent } from './Omar/resetpassword/resetpassword.component';
-import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
 import { CategoryComponent } from './Suleiman/category/category.component';
 import { ProductsComponent } from './Suleiman/products/products.component';
 import { ProductDetailsComponent } from './Suleiman/product-details/product-details.component';
@@ -22,8 +21,7 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductsComponent },
   { path: 'productDetail/:id', component: ProductDetailsComponent },
 
-  {
-  { path: "", component: HomeComponent },
+  
   {
     
     path: 'Home', component: LandingPageComponent, children:
