@@ -23,8 +23,8 @@ export class ProductDetailsComponent {
   }
 
   getproductduitid() {
-    //this.id = this._active.snapshot.paramMap.get('id')
-    this.id=2
+    this.id = this._active.snapshot.paramMap.get('id')
+    //this.id=2
     this.ser.getProductbyid(this.id).subscribe((data) => {
       this.prodata = data
       console.log("data")
@@ -34,7 +34,7 @@ export class ProductDetailsComponent {
   getRatingByProductID() {
     this.ser.getRatingsForproduct().subscribe((data) => {
       this.prorating = data//بدنا نعرض الداتا بالريفيو html
-      
+      this.prorating = this.prorating.filter((p: any) => p.productId == this.id)
     })
 
   }
@@ -42,8 +42,16 @@ export class ProductDetailsComponent {
   addRatingForProduct(data: any) {
     this.ser.addRatingForproduct(data).subscribe(() => {
       alert('New Rating Has Been Added')
+      this.getRatingByProductID()
+
+    })
+
+  }
+
+  addToCart(data: any) {
+    this.ser.addItemsToCart(data).subscribe(() => {
+      alert('Product Has Been Added To Cart')
     })
   }
-  
 
 }

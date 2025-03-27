@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
@@ -26,6 +27,9 @@ import { AddCategorieComponent } from './Abdallah/manage-categories/add-categori
 import { EditCategorieComponent } from './Abdallah/manage-categories/edit-categorie/edit-categorie.component';
 import { DeleteCategorieComponent } from './Abdallah/manage-categories/delete-categorie/delete-categorie.component';
 import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-users.component';
+import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
+import { CategoryComponent } from './Suleiman/category/category.component';
+import { ProductsComponent } from './Suleiman/products/products.component';
 
 
 
@@ -41,9 +45,12 @@ import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-us
     ManageCategoriesComponent,
     NavBarComponent,
     FooterComponent,
+    ChatbotComponent,
+    
     
     ManageProductComponent,
     ManageCategoriesComponent,
+    
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
@@ -55,6 +62,9 @@ import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-us
     EditCategorieComponent,
     DeleteCategorieComponent,
     GetUsersComponent
+    LaststageforgetpasswordComponent,
+    CategoryComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

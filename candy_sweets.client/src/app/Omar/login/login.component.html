@@ -1,15 +1,28 @@
-<p>login works!</p>
-<form #login="ngForm" (ngSubmit)="getData(login.value)">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="text" class="form-control" name="email" ngModel>
+<div class="container-center">
+  <div class="wrapper">
+    <div class="title">
+      Welcome to our Shop
+    </div>
+    <form #login="ngForm" (ngSubmit)="getData(login.value)">
+      <div class="field">
+        <input type="text" class="form-control" name="email" ngModel required>
+        <label>Email Address</label>
+      </div>
+      <div class="field">
+        <input type="text" class="form-control" name="password" ngModel required>
+        <label>Password</label>
+      </div>
+      <div class="content">
+        <div class="pass-link">
+          <a (click)="forgotPassword()">Forgot password?</a>
+        </div>
+      </div>
+      <div class="field">
+        <input type="submit" value="Login">
+      </div>
+      <div class="signup-link">
+        Not a member? <a routerLink="/Home/Register">Signup now</a>
+      </div>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="text" class="form-control" name="password" ngModel>
-  </div>
-
-  <button type="submit" class="btn btn-primary">Submit</button>
-  <button type="button" class="btn btn-link" (click)="forgotPassword()">Forgot Password?</button>
-
-</form>
+</div>
