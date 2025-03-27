@@ -1,0 +1,29 @@
+<p>register works!</p>
+
+<form #newuser="ngForm" (ngSubmit)="adduser(newuser.value)">
+  <div class="mb-3">
+    <label class="form-label">Name:</label>
+    <input type="text" class="form-control" name="name" ngModel>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Email:</label>
+    <input type="email" class="form-control" name="email" ngModel>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="text" class="form-control" name="password" ngModel>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Address:</label>
+    <input type="text" class="form-control" name="address" ngModel>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Phone Number:</label>
+    <input type="number" class="form-control" name="phone" ngModel>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Image:</label>
+    <input type="text" class="form-control" name="image" ngModel>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
