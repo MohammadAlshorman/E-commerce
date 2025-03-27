@@ -5,9 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 
 
-import { FormsModule } from '@angular/forms'; // Import FormsModule
 
-import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
@@ -28,11 +26,11 @@ import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.co
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
 import { AddCategorieComponent } from './Abdallah/manage-categories/add-categorie/add-categorie.component';
 import { EditCategorieComponent } from './Abdallah/manage-categories/edit-categorie/edit-categorie.component';
-import { DeleteCategorieComponent } from './Abdallah/manage-categories/delete-categorie/delete-categorie.component';
 import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-users.component';
 import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
 import { CategoryComponent } from './Suleiman/category/category.component';
 import { ProductsComponent } from './Suleiman/products/products.component';
+
 
 
 
@@ -63,11 +61,10 @@ import { ProductsComponent } from './Suleiman/products/products.component';
     LaststageforgetpasswordComponent,
     AddCategorieComponent,
     EditCategorieComponent,
-    DeleteCategorieComponent,
-    GetUsersComponent
-    LaststageforgetpasswordComponent,
+    GetUsersComponent,
     CategoryComponent,
-    ProductsComponent
+    ProductsComponent,
+   
   ],
   imports: [
     BrowserModule, HttpClientModule,
