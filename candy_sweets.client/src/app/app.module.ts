@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+
 
 import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { AppRoutingModule } from './app-routing.module';
@@ -22,6 +22,10 @@ import { EditprofileComponent } from './Omar/editprofile/editprofile.component';
 import { ResetpasswordComponent } from './Omar/resetpassword/resetpassword.component';
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
+import { AddCategorieComponent } from './Abdallah/manage-categories/add-categorie/add-categorie.component';
+import { EditCategorieComponent } from './Abdallah/manage-categories/edit-categorie/edit-categorie.component';
+import { DeleteCategorieComponent } from './Abdallah/manage-categories/delete-categorie/delete-categorie.component';
+import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-users.component';
 
 
 
@@ -38,7 +42,7 @@ import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword
     NavBarComponent,
     FooterComponent,
     
-    ManageProductsComponent,
+    ManageProductComponent,
     ManageCategoriesComponent,
     LoginComponent,
     RegisterComponent,
@@ -46,7 +50,11 @@ import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword
     EditprofileComponent,
     ResetpasswordComponent,
     ForgetpasswordComponent,
-    LaststageforgetpasswordComponent
+    LaststageforgetpasswordComponent,
+    AddCategorieComponent,
+    EditCategorieComponent,
+    DeleteCategorieComponent,
+    GetUsersComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

@@ -1,1 +1,33 @@
-<p>manage-categories works!</p>
+<!-- Page content -->
+<div class="content">
+
+
+  <p>get-category works!</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of Categorys">
+
+        <td>{{category.id}}</td>
+        <td>{{category.name}}</td>
+        <td><a routerLink="/addcategories" class="btn btn-primary">Add</a></td>
+        <td><a routerLink="/editcategories/{{category.id}}" class="btn btn-warning">Edit</a></td>
+        <td><button (click)="deletecategory(category.id)" class="btn btn-danger">Delete</button></td>
+        <!--<td><button (click)="updatecategory(category.id)" class="btn btn-danger">Edit</button></td>-->
+
+
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
