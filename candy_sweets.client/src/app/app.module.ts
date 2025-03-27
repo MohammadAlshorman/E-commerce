@@ -1,6 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
+
+import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +24,13 @@ import { EditprofileComponent } from './Omar/editprofile/editprofile.component';
 import { ResetpasswordComponent } from './Omar/resetpassword/resetpassword.component';
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
+import { AddCategorieComponent } from './Abdallah/manage-categories/add-categorie/add-categorie.component';
+import { EditCategorieComponent } from './Abdallah/manage-categories/edit-categorie/edit-categorie.component';
+import { DeleteCategorieComponent } from './Abdallah/manage-categories/delete-categorie/delete-categorie.component';
+import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-users.component';
 import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
+import { CategoryComponent } from './Suleiman/category/category.component';
+import { ProductsComponent } from './Suleiman/products/products.component';
 
 
 
@@ -39,6 +49,8 @@ import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
     ChatbotComponent,
     
     
+    ManageProductComponent,
+    ManageCategoriesComponent,
     
     LoginComponent,
     RegisterComponent,
@@ -46,7 +58,14 @@ import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
     EditprofileComponent,
     ResetpasswordComponent,
     ForgetpasswordComponent,
-    LaststageforgetpasswordComponent
+    LaststageforgetpasswordComponent,
+    AddCategorieComponent,
+    EditCategorieComponent,
+    DeleteCategorieComponent,
+    GetUsersComponent
+    LaststageforgetpasswordComponent,
+    CategoryComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,
