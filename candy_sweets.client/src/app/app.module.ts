@@ -23,6 +23,8 @@ import { ResetpasswordComponent } from './Omar/resetpassword/resetpassword.compo
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
 import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
+import { CategoryComponent } from './Suleiman/category/category.component';
+import { ProductsComponent } from './Suleiman/products/products.component';
 
 
 
@@ -48,7 +50,9 @@ import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
     EditprofileComponent,
     ResetpasswordComponent,
     ForgetpasswordComponent,
-    LaststageforgetpasswordComponent
+    LaststageforgetpasswordComponent,
+    CategoryComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule, HttpClientModule,

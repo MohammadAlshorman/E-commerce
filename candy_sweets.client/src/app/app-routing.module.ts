@@ -11,10 +11,17 @@ import { EditprofileComponent } from './Omar/editprofile/editprofile.component';
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
 import { ResetpasswordComponent } from './Omar/resetpassword/resetpassword.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
+import { CategoryComponent } from './Suleiman/category/category.component';
+import { ProductsComponent } from './Suleiman/products/products.component';
+import { ProductDetailsComponent } from './Suleiman/product-details/product-details.component';
 
 const routes: Routes = [
 
   { path: "", component: HomeComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'product/:id', component: ProductsComponent },
+  { path: 'productDetail/:id', component: ProductDetailsComponent },
+
   {
     
     path: 'Home', component: LandingPageComponent, children:
