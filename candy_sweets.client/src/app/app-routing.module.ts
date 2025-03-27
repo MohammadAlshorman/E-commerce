@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Mohammad/home/home.component';
 import { EditprofileComponent } from './Omar/editprofile/editprofile.component';
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
+
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
 import { LoginComponent } from './Omar/login/login.component';
@@ -25,6 +26,9 @@ const routes: Routes = [
 
   { path: "", component: HomeComponent },
   {
+  { path: "", component: HomeComponent },
+  {
+    
     path: 'Home', component: LandingPageComponent, children:
       [
         { path: 'Login', component: LoginComponent },

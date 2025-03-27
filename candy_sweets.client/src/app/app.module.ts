@@ -2,7 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { FormsModule } from '@angular/forms'; // Import FormsModule
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
@@ -21,6 +21,7 @@ import { EditprofileComponent } from './Omar/editprofile/editprofile.component';
 import { ResetpasswordComponent } from './Omar/resetpassword/resetpassword.component';
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
+import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
 
 
 
@@ -36,6 +37,8 @@ import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword
     ManageCategoriesComponent,
     NavBarComponent,
     FooterComponent,
+    ChatbotComponent,
+    
     
     
     LoginComponent,
