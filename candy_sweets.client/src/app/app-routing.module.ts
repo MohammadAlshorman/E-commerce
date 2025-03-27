@@ -14,6 +14,7 @@ import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword
 const routes: Routes = [
   { path: "", component: HomeComponent },
   {
+    
     path: 'Home', component: LandingPageComponent, children:
       [
         { path: 'Login', component: LoginComponent },
