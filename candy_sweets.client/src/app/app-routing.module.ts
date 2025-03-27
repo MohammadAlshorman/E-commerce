@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './Mohammad/home/home.component';
+
+const routes: Routes = [
+  { path: "", component: HomeComponent },
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
 import { ProfileComponent } from './Omar/profile/profile.component';
 import { LoginComponent } from './Omar/login/login.component';
@@ -11,6 +15,7 @@ import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword
 
 const routes: Routes = [
 
+];
   {
     path: 'Home', component: LandingPageComponent, children:
       [
