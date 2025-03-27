@@ -44,6 +44,9 @@ export class ProductDetailsComponent {
       alert('New Rating Has Been Added')
     })
   }
-  
+
+  addToCart() {
+
+  }
 
 }
