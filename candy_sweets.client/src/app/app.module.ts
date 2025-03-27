@@ -14,6 +14,7 @@ import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-c
 import { ManageProductComponent } from './Ahmad/manage-product/manage-product.component';
 import { NavBarComponent } from './Mohammad/nav-bar/nav-bar.component';
 import { FooterComponent } from './Mohammad/footer/footer.component';
+import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
 
 
 
@@ -29,6 +30,7 @@ import { FooterComponent } from './Mohammad/footer/footer.component';
     ManageCategoriesComponent,
     NavBarComponent,
     FooterComponent,
+    ChatbotComponent,
     
   ],
   imports: [
