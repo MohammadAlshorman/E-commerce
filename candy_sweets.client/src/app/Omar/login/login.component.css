@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   height: 115vh;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #f195b2, #303339);
   padding: 20px;
 }
 
@@ -26,7 +26,7 @@
     text-align: center;
     color: #fff;
     border-radius: 15px 15px 0 0;
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #f195b2, #303339);
     padding: 20px;
     margin-bottom: 30px;
   }
@@ -73,7 +73,7 @@
       .wrapper form .field input:valid ~ label {
         top: -10px;
         font-size: 14px;
-        color: #4158d0;
+        color: #797979;
       }
 
 /*Error message styling*/
@@ -91,11 +91,7 @@
   /* visibility: visible; Ensures error message remains visible */
 }
 
-/* Ensures enough space between input and error message */
-/*.wrapper form .field input:not(:placeholder-shown) + .error-message,
-.wrapper form .field input:focus + .error-message {
-  visibility: visible;
-}*/
+
 
 /* Fixes height to prevent overlapping */
 .wrapper form .field {
@@ -108,7 +104,7 @@
     font-size: 18px;
     font-weight: 500;
     cursor: pointer;
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #f195b2, #303339);
     padding: 15px;
     border-radius: 25px;
     transition: 0.3s ease;
@@ -126,7 +122,7 @@
 }
 
   .wrapper form .signup-link a {
-    color: #4158d0;
+    color: #71b7e6;
     text-decoration: none;
     font-weight: 600;
   }

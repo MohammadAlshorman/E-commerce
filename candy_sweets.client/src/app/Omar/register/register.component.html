@@ -1,52 +1,96 @@
 <div class="Reigster_container">
-
-
   <div class="container">
-    <!-- Title section -->
     <div class="title">It is Lovely to have you with US.</div>
     <div class="content">
-      <!-- Registration form -->
       <form #newuser="ngForm" (ngSubmit)="adduser(newuser.value)">
         <div class="user-details">
-          <!-- Input for Full Name -->
+
+          <!-- Full Name -->
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" name="name" ngModel required>
+            <input type="text"
+                   placeholder="Enter your name"
+                   name="name"
+                   [(ngModel)]="nameInput"
+                   (input)="validateName()">
+            <div *ngIf="nameError" class="error-message">
+              <small>{{ nameError }}</small>
+            </div>
           </div>
-          <!-- Input for Username -->
-          <div class="input-box">
-            <span class="details">Gender</span>
-            <input type="text" placeholder="Enter your Gender" name="Gender" ngModel required>
+
+        <div class="input-box select-box">
+          <span class="details">Gender</span>
+          <select name="Gender" [(ngModel)]="genderInput" (change)="validateGender()">
+            <option value="I prefer not to say" selected>I prefer not to say</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+          <div *ngIf="genderError" class="error-message">
+            <small>{{ genderError }}</small>
           </div>
-          <!-- Input for Email -->
-          <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" name="email" ngModel required>
-          </div>
-          <!-- Input for Phone Number -->
+          <div class="custom-arrow"></div> <!-- Custom SVG arrow -->
+        </div>
+
+
+          <!-- Phone Number (Jordan Format) -->
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your Phone number" name="phone" ngModel required>
+            <input type="text"
+                   placeholder="Enter your Phone number"
+                   name="phone"
+                   [(ngModel)]="phoneInput"
+                   (input)="validatePhone()">
+            <div *ngIf="phoneError" class="error-message">
+              <small>{{ phoneError }}</small>
+            </div>
           </div>
-          <!-- Input for Password -->
+
+          <!-- Address -->
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text"
+                   placeholder="City , Governorate"
+                   name="address"
+                   [(ngModel)]="addressInput"
+                   (input)="validateAddress()">
+            <div *ngIf="addressError" class="error-message">
+              <small>{{ addressError }}</small>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email"
+                   placeholder="Enter your email"
+                   name="email"
+                   [(ngModel)]="emailInput"
+                   (input)="validateEmail()">
+            <div *ngIf="emailError" class="error-message">
+              <small>{{ emailError }}</small>
+            </div>
+          </div>
+
+          <!-- Password -->
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" name="password" ngModel required>
+            <input type="password"
+                   placeholder="Enter your password"
+                   name="password"
+                   [(ngModel)]="passwordInput"
+                   (input)="validatePassword()">
+            <div *ngIf="passwordError" class="error-message">
+              <small>{{ passwordError }}</small>
+            </div>
           </div>
-          <!-- Input for Confirm Password -->
-          <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
-          </div>
+
+
         </div>
 
         <!-- Submit button -->
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Register" [disabled]="formHasErrors()">
         </div>
-        <!--<div >
-     But I am a member <a routerLink="/Home/Login">Go Back To Login</a>
-  </div>-->
         <div class="bottom-section">
           But I am a member <a routerLink="/Home/Login">Go Back To Login</a>
         </div>

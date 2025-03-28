@@ -4,12 +4,12 @@
 /* Profile Page Container */
 .Profile_container {
   font-family: 'Poppins', sans-serif;
-  height: 120vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6); /* Same gradient as Register Page */
+  background: linear-gradient(135deg, #f195b2, #303339); /* Same gradient as Register Page */
 }
 
 .container {
@@ -39,7 +39,7 @@
     height: 3px;
     width: 30px;
     border-radius: 5px;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(135deg, #f195b2, #303339);
   }
 
 .user-details {
@@ -82,14 +82,14 @@
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg,#f195b2, #303339);
   text-align: center;
   text-decoration: none;
   line-height: 45px;
 }
 
   .pink-button:hover {
-    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(-135deg,#f195b2, #303339);
   }
 
 /* Responsive Design */

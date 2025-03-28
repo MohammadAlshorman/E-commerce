@@ -4,12 +4,12 @@
 
 .Reigster_container {
   font-family: 'Poppins', sans-serif;
-  height: 115vh;
+  height: 160vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: linear-gradient(135deg, #f195b2, #303339);
 }
 .container {
   max-width: 700px;
@@ -35,7 +35,7 @@
       height: 3px;
       width: 30px;
       border-radius: 5px;
-      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      background: linear-gradient(135deg, #f195b2, #303339);
     }
 
 .content form .user-details {
@@ -70,7 +70,7 @@ form .input-box span.details {
 
   .user-details .input-box input:focus,
   .user-details .input-box input:valid {
-    border-color: #9b59b6;
+    border-color: #303339;
   }
 
 form .gender-details .gender-title {
@@ -104,7 +104,7 @@ form .category {
 #dot-1:checked ~ .category label .one,
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three {
-  background: #9b59b6;
+  background: #303339;
   border-color: #d9d9d9;
 }
 
@@ -128,12 +128,27 @@ form .button {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(135deg, #f195b2, #303339);
   }
 
     form .button input:hover {
-      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+      background: linear-gradient(-135deg, #f195b2, #303339);
     }
+
+/*Error message styling*/
+.error-message {
+  color: red;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
+  width: 100%;
+  display: block;
+  min-height: 20px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  /* visibility: visible; Ensures error message remains visible */
+}
 /* Responsive media query code for mobile devices */
 @media(max-width: 584px) {
   .container {
@@ -158,6 +173,59 @@ form .button {
     width: 5px;
   }
 }
+
+  /* Add border color on focus */
+  .select-box select:focus {
+    border-color: #303339;
+  }
+
+
+/* Wrapper for select */
+.select-box {
+  position: relative;
+  width: 100%;
+}
+
+  /* Style the select dropdown like other inputs */
+  .select-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    padding-right: 40px; /* Space for custom arrow */
+  }
+
+/* Custom dropdown arrow using SVG */
+.custom-arrow {
+  position: absolute;
+  right: 15px;
+  top: 67%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23303339' width='16px' height='16px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Change arrow color on focus */
+.select-box select:focus + .custom-arrow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f195b2' width='16px' height='16px'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+
 /* Styling for the bottom section */
 .container .bottom-section {
   margin-top: 20px; /* Adds space from the buttons above */
@@ -176,7 +244,7 @@ form .button {
 
     .container .bottom-section a:hover {
       text-decoration: underline; /* Adds underline on hover */
-      color: #9b59b6; /* Changes to gradient-complementary color on hover */
+      color: #303339; /* Changes to gradient-complementary color on hover */
     }
 /* Responsive media query code for mobile devices */
 @media(max-width: 459px) {
