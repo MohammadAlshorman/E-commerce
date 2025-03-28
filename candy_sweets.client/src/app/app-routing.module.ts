@@ -25,8 +25,7 @@ const routes: Routes = [
 
   
   { path: "", component: HomeComponent },
-  { 
-  { path: "", component: HomeComponent },
+
 
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductsComponent },
@@ -45,7 +44,7 @@ const routes: Routes = [
         { path: 'Reset', component: ResetpasswordComponent }
     ]
   },
-  },
+
   {path: 'getcategories', component: ManageCategoriesComponent},
   {path: 'addcategories', component: AddCategorieComponent},
   {path: 'editcategories/:id', component: EditCategorieComponent},
