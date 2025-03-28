@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrl: './nav-bar.component.css'
 })
 export class NavBarComponent {
+  constructor(private ser: SuleimanserviceService) { }
+  cartItemCount: number = 0
+  ngOnInit() {
+    this.ser.cartCount$.subscribe(count => {
+      this.cartItemCount = count;
+      
+    })
 
+  }
 }

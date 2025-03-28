@@ -30,6 +30,7 @@ import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-us
 import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
 import { CategoryComponent } from './Suleiman/category/category.component';
 import { ProductsComponent } from './Suleiman/products/products.component';
+import { CartComponent } from './Suleiman/cart/cart.component';
 
 
 
@@ -64,6 +65,7 @@ import { ProductsComponent } from './Suleiman/products/products.component';
     GetUsersComponent,
     CategoryComponent,
     ProductsComponent,
+    CartComponent,
    
   ],
   imports: [

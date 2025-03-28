@@ -17,6 +17,7 @@ import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-c
 import { AddCategorieComponent } from './Abdallah/manage-categories/add-categorie/add-categorie.component';
 import { EditCategorieComponent } from './Abdallah/manage-categories/edit-categorie/edit-categorie.component';
 import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-users.component';
+import { CartComponent } from './Suleiman/cart/cart.component';
 
 
  
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductsComponent },
   { path: 'productDetail/:id', component: ProductDetailsComponent },
+  { path: 'cart', component: CartComponent },
 
   
   {
