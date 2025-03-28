@@ -11,7 +11,6 @@
     "start:windows": "ng serve --ssl --ssl-cert \"%APPDATA%\\ASP.NET\\https\\%npm_package_name%.pem\" --ssl-key \"%APPDATA%\\ASP.NET\\https\\%npm_package_name%.key\" --open",
     "start:default": "ng serve --ssl --ssl-cert \"$HOME/.aspnet/https/${npm_package_name}.pem\" --ssl-key \"$HOME/.aspnet/https/${npm_package_name}.key\" --open"
   },
-
   "private": true,
   "dependencies": {
     "@angular/common": "^19.2.0",
@@ -24,6 +23,7 @@
     "jest-editor-support": "*",
     "run-script-os": "*",
     "rxjs": "~7.8.0",
+    "sweetalert2": "^11.17.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
