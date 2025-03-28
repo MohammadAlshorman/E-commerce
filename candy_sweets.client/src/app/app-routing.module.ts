@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './Mohammad/home/home.component';
 import { EditprofileComponent } from './Omar/editprofile/editprofile.component';
 import { ForgetpasswordComponent } from './Omar/forgetpassword/forgetpassword.component';
-
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
 import { LaststageforgetpasswordComponent } from './Omar/laststageforgetpassword/laststageforgetpassword.component';
 import { LoginComponent } from './Omar/login/login.component';
@@ -24,7 +23,10 @@ import { CartComponent } from './Suleiman/cart/cart.component';
 
 
 const routes: Routes = [
+
+  
   { path: "", component: HomeComponent },
+
 
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductsComponent },
@@ -44,6 +46,7 @@ const routes: Routes = [
         { path: 'Reset', component: ResetpasswordComponent }
     ]
   },
+
   {path: 'getcategories', component: ManageCategoriesComponent},
   {path: 'addcategories', component: AddCategorieComponent},
   {path: 'editcategories/:id', component: EditCategorieComponent},

@@ -34,7 +34,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-           
+
             "styles": [
               "src/styles.css"
             ],
@@ -64,8 +64,29 @@
           },
           "defaultConfiguration": "production"
         },
+        //"serve": {
+        //  "builder": "@angular-devkit/build-angular:dev-server",
+        //  "configurations": {
+        //    "production": {
+        //      "buildTarget": "angularapp7.client:build:production"
+        //    },
+        //    "development": {
+        //      "buildTarget": "angularapp7.client:build:development"
+        //    }
+        //  },
+        //  "defaultConfiguration": "development",
+        //  "options": {
+        //    "proxyConfig": "src/proxy.conf.js",
+        //    "port": 61781
+        //  }
+        //}
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "proxyConfig": "src/proxy.conf.js",
+            "port": 61781,
+            "open": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "angularapp7.client:build:production"
@@ -74,11 +95,7 @@
               "buildTarget": "angularapp7.client:build:development"
             }
           },
-          "defaultConfiguration": "development",
-          "options": {
-            "proxyConfig": "src/proxy.conf.js",
-            "port": 61781
-          }
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
@@ -99,7 +116,7 @@
             ],
             "styles": [
               "src/styles.css"
-            
+
 
             ],
             "scripts": [],
