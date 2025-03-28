@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 145vh;
+  height: 115vh;
   background: linear-gradient(-135deg, #c850c0, #4158d0);
   padding: 20px;
 }
@@ -17,6 +17,7 @@
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  margin-top: 140px;
 }
 
   .wrapper .title {
