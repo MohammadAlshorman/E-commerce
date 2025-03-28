@@ -1,15 +1,13 @@
 <div class="container-center">
   <div class="wrapper">
-    <div class="title">
-      Welcome to our Shop
-    </div>
+    
     <form #login="ngForm" (ngSubmit)="getData(login.value)">
       <div class="field">
         <input type="text" class="form-control" name="email" ngModel required>
         <label>Email Address</label>
       </div>
       <div class="field">
-        <input type="text" class="form-control" name="password" ngModel required>
+        <input type="password" class="form-control" name="password" ngModel required>
         <label>Password</label>
       </div>
       <div class="content">

@@ -2,11 +2,12 @@
 
 .container-center {
   font-family: 'Poppins', sans-serif;
-  display: flex; /* Use Flexbox for centering */
-  justify-content: center; /* Horizontally center */
-  align-items: center; /* Vertically center */
-  height: 100vh; /* Full viewport height */
-  background: linear-gradient(-135deg, #c850c0, #4158d0); /* Optional background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('/assets/img/banner/banner-bg.jpg') no-repeat center center; 
+  background-size: cover; 
 }
 
 .wrapper {
@@ -24,7 +25,7 @@
     color: #fff;
     user-select: none;
     border-radius: 15px 15px 0 0;
-    background: linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #FF69B4, #FF1493);
   }
 
   .wrapper form {
@@ -51,7 +52,7 @@
 
         .wrapper form .field input:focus,
         form .field input:valid {
-          border-color: #4158d0;
+          border-color: #FF69B4;
         }
 
       .wrapper form .field label {
@@ -70,7 +71,7 @@ form .field input:focus ~ label,
 form .field input:valid ~ label {
   top: 0%;
   font-size: 16px;
-  color: #4158d0;
+  color: #FF69B4;
   background: #fff;
   transform: translateY(-50%);
 }
@@ -102,10 +103,6 @@ form .content {
     padding-left: 5px;
   }
 
-  form .content .pass-link {
-/*    color: "";*/
-  }
-
 form .field input[type="submit"] {
   color: #fff;
   border: none;
@@ -114,7 +111,7 @@ form .field input[type="submit"] {
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #FF69B4, #FF1493);
   transition: all 0.3s ease;
 }
 
@@ -130,7 +127,7 @@ form .signup-link {
 
   form .pass-link a,
   form .signup-link a {
-    color: #4158d0;
+    color: #FF1493;
     text-decoration: none;
   }
 
@@ -138,3 +135,29 @@ form .signup-link {
     form .signup-link a:hover {
       text-decoration: underline;
     }
+.custom-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: grey;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  transform: translateY(-20px);
+  z-index: 9999;
+}
+
+  .custom-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .custom-toast.success {
+    background-color: #28a745; 
+  }
+
+  .custom-toast.error {
+    background-color: #dc3545; 
+  }

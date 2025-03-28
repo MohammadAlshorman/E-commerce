@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerLoginRegistrationService } from '../Service_User_API/customer-login-registration.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-laststageforgetpassword',
   standalone: false,
@@ -15,32 +17,55 @@ export class LaststageforgetpasswordComponent implements OnInit {
   constructor(private user_api: CustomerLoginRegistrationService, private router: Router) { }
 
   ngOnInit(): void {
-    // Get email passed from the ForgotPasswordComponent
-    const navigation = this.router.getCurrentNavigation();
-    const state = navigation?.extras?.state as { email: string };
-    this.email = state?.email || '';
+    this.email = sessionStorage.getItem('verifiedEmail') || '';
+
+    if (!this.email) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Unauthorized Access',
+        text: 'You need to verify your email first.',
+        confirmButtonColor: '#FF69B4'
+      }).then(() => {
+        this.router.navigate(['/Home/ForgetPassword']);
+      });
+    }
   }
 
   resetPassword() {
     if (this.newPassword !== this.confirmPassword) {
-      alert('Passwords do not match.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Password Mismatch',
+        text: 'Passwords do not match. Please try again.',
+        confirmButtonColor: '#FF69B4'
+      });
       return;
     }
 
-    // Update the password in the API
     this.user_api.Get_User_Login().subscribe((data) => {
       const user = data.find((u: any) => u.email === this.email);
 
       if (user) {
-        // Update the user's password
-        user.password = this.newPassword;
+        user.password = this.newPassword; 
 
         this.user_api.Update_User(user.ID, user).subscribe(() => {
-          alert('Password reset successfully.');
-          this.router.navigate(['/Home/Login']); // Redirect to login page
+          Swal.fire({
+            icon: 'success',
+            title: 'Password Reset Successfully',
+            text: 'You can now login with your new password.',
+            confirmButtonColor: '#FF69B4'
+          }).then(() => {
+            sessionStorage.removeItem('verifiedEmail'); 
+            this.router.navigate(['/Home/Login']);
+          });
         });
       } else {
-        alert('Error: Email not found.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'User not found.',
+          confirmButtonColor: '#FF69B4'
+        });
       }
     });
   }

@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from '../service/product.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-manage-product',
@@ -11,23 +12,19 @@ export class ManageProductComponent implements OnInit {
   @ViewChild('productFormRef') productFormRef!: ElementRef;
 
   products: any[] = [];
-  categories: any[] = []; 
+  categories: any[] = [];
   isEditMode = false;
   showProductModal = false;
   editProductId = '';
   showDeleteModal = false;
   productToDeleteId = '';
 
-  showToast = false;
-  toastMessage = '';
-  toastType = 'success';
-
   productFormData = {
     name: '',
     price: 0,
     description: '',
     stock: 0,
-    categoryId: '', 
+    categoryId: '',
     imageUrl: ''
   };
 
@@ -35,19 +32,19 @@ export class ManageProductComponent implements OnInit {
 
   ngOnInit() {
     this.loadProducts();
-    this.loadCategories(); 
+    this.loadCategories();
   }
 
   loadProducts() {
     this.productService.getProducts().subscribe((response: any[]) => {
       this.products = response;
-    }, (error) => console.error('Error loading products:', error));
+    }, (error) => this.showAlert('Error loading products!', 'error'));
   }
 
-  loadCategories() { 
+  loadCategories() {
     this.productService.getCategories().subscribe((response: any[]) => {
       this.categories = response;
-    }, (error) => console.error('Error loading categories:', error));
+    }, (error) => this.showAlert('Error loading categories!', 'error'));
   }
 
   onSubmit() {
@@ -70,7 +67,19 @@ export class ManageProductComponent implements OnInit {
 
   confirmDelete(product: any) {
     this.productToDeleteId = product.id;
-    this.showDeleteModal = true;
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteProduct();
+      }
+    });
   }
 
   deleteProduct() {
@@ -78,14 +87,8 @@ export class ManageProductComponent implements OnInit {
       this.productService.deleteProduct(this.productToDeleteId).subscribe(() => {
         this.products = this.products.filter(p => p.id !== this.productToDeleteId);
         this.showAlert('Product Deleted Successfully!', 'success');
-        this.cancelDelete();
       }, (error) => this.showAlert('Error deleting product!', 'error'));
     }
-  }
-
-  cancelDelete() {
-    this.showDeleteModal = false;
-    this.productToDeleteId = '';
   }
 
   editProduct(product: any) {
@@ -112,10 +115,12 @@ export class ManageProductComponent implements OnInit {
   }
 
   showAlert(message: string, type: string) {
-    this.toastMessage = message;
-    this.toastType = type;
-    this.showToast = true;
-    setTimeout(() => this.showToast = false, 3000);
+    Swal.fire({
+      icon: type === 'success' ? 'success' : 'error',
+      title: type === 'success' ? 'Success' : 'Error',
+      text: message,
+      confirmButtonColor: '#FF69B4'
+    });
   }
 
   isFormValid(): boolean {
@@ -131,5 +136,11 @@ export class ManageProductComponent implements OnInit {
     const category = this.categories.find(cat => cat.id === categoryId);
     return category ? category.name : 'Unknown Category';
   }
+
+  cancelDelete() {
+    this.showDeleteModal = false;
+    this.productToDeleteId = '';
+  }
+
 
 }

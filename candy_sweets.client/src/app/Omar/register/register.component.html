@@ -1,6 +1,4 @@
 <div class="Reigster_container">
-
-
   <div class="container">
     <!-- Title section -->
     <div class="title">It is Lovely to have you with US.</div>
@@ -13,30 +11,39 @@
             <span class="details">Full Name</span>
             <input type="text" placeholder="Enter your name" name="name" ngModel required>
           </div>
-          <!-- Input for Username -->
+
+          <!-- Dropdown for Gender -->
           <div class="input-box">
             <span class="details">Gender</span>
-            <input type="text" placeholder="Enter your Gender" name="Gender" ngModel required>
+            <select name="Gender" ngModel required>
+              <option value="" disabled selected>Select your gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
           </div>
+
           <!-- Input for Email -->
           <div class="input-box">
             <span class="details">Email</span>
             <input type="text" placeholder="Enter your email" name="email" ngModel required>
           </div>
+
           <!-- Input for Phone Number -->
           <div class="input-box">
             <span class="details">Phone Number</span>
             <input type="text" placeholder="Enter your Phone number" name="phone" ngModel required>
           </div>
+
           <!-- Input for Password -->
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" name="password" ngModel required>
+            <input type="password" placeholder="Enter your password" name="password" ngModel required>
           </div>
+
           <!-- Input for Confirm Password -->
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input type="password" placeholder="Confirm your password" required>
           </div>
         </div>
 

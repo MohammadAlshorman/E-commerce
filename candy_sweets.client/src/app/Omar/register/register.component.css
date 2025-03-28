@@ -1,6 +1,4 @@
-/* Importing Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 
 .Reigster_container {
   font-family: 'Poppins', sans-serif;
@@ -9,8 +7,10 @@
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+  background: url('/assets/img/banner/banner-bg.jpg') no-repeat center center; 
+  background-size: cover;
 }
+
 .container {
   max-width: 700px;
   width: 100%;
@@ -34,7 +34,7 @@
       height: 3px;
       width: 30px;
       border-radius: 5px;
-      background: linear-gradient(135deg, #71b7e6, #9b59b6);
+      background: linear-gradient(135deg, #FF69B4, #FF1493);
     }
 
 .content form .user-details {
@@ -69,7 +69,7 @@ form .input-box span.details {
 
   .user-details .input-box input:focus,
   .user-details .input-box input:valid {
-    border-color: #9b59b6;
+    border-color: #FF69B4;
   }
 
 form .gender-details .gender-title {
@@ -103,7 +103,7 @@ form .category {
 #dot-1:checked ~ .category label .one,
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three {
-  background: #9b59b6;
+  background: #FF69B4;
   border-color: #d9d9d9;
 }
 
@@ -113,7 +113,7 @@ form input[type="radio"] {
 
 form .button {
   height: 45px;
-  margin: 35px 0
+  margin: 35px 0;
 }
 
   form .button input {
@@ -127,13 +127,13 @@ form .button {
     letter-spacing: 1px;
     cursor: pointer;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    background: linear-gradient(-135deg, #FF69B4, #FF1493); 
   }
 
     form .button input:hover {
-      background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+      background: linear-gradient(135deg, #FF69B4, #FF1493); 
     }
-/* Responsive media query code for mobile devices */
+
 @media(max-width: 584px) {
   .container {
     max-width: 100%;
@@ -157,9 +157,24 @@ form .button {
     width: 5px;
   }
 }
-/* Responsive media query code for mobile devices */
+
 @media(max-width: 459px) {
   .container .content .category {
     flex-direction: column;
   }
 }
+input, select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+  input:focus, select:focus {
+    border-color: #9b59b6;
+  }

@@ -1,35 +1,25 @@
-<!-- Page content -->
-<div class="content">
-
-
-
-
-  <table class="table">
+<div class="content container mt-5">
+  <h3 class="main-title">User List</h3>
+  <table class="table table-bordered table-hover">
     <thead>
       <tr>
-
         <th scope="col">ID</th>
         <th scope="col">Name</th>
         <th scope="col">Role</th>
         <th scope="col">Gender</th>
-        <th scope="col">action</th>
-
+        <th scope="col">Action</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of Users">
-
         <td>{{user.ID}}</td>
         <td>{{user.name}}</td>
         <td>{{user.role}}</td>
         <td>{{user.Gender}}</td>
-
-        <td><button (click)="deleteUsers(user.ID)" class="btn btn-danger">Delete</button></td>
-
-
+        <td>
+          <button (click)="deleteUsers(user.ID)" class="btn pink-button">Delete</button>
+        </td>
       </tr>
-
-
     </tbody>
   </table>
 </div>
