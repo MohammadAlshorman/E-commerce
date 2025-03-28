@@ -32,7 +32,7 @@
               <img src="img/product/cart-img.jpg" alt="">
             </td>
             <!--getProductName(i.productId)-->
-            <td>{{ i.productId }}</td>
+            <td>{{ getProductName(i.productId) }}</td>
             <td>${{i.Price}}</td>
             <td>{{i.quantity}}</td>
             <td>${{i.Price * i.quantity}}</td>
@@ -72,7 +72,8 @@
             <h4>Total <span>${{getTotalPrice()}}</span></h4>
           </div>
           <div class="cart_footer">
-            <a class="pest_btn" href="#">Proceed to Checkout</a>
+            <button class="pest_btn" (click)="isLogin()">Proceed to Checkout</button>
+            <!--btn on click go and check if there a user of there a user rout to checkout if not go to login page-->
           </div>
         </div>
       </div>
