@@ -7,9 +7,14 @@ const PROXY_CONFIG = [
   {
     context: [
       "/weatherforecast",
+      "/swagger", // Adding the Swagger route
+
     ],
     target,
-    secure: false
+    secure: false,
+    logLevel: "debug", // Optional: useful for troubleshooting
+    changeOrigin: true
+
   }
 ]
 

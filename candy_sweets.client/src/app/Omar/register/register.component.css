@@ -4,7 +4,7 @@
 
 .Reigster_container {
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+  height: 115vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +18,7 @@
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 100px;
 }
 
   .container .title {
@@ -157,6 +158,26 @@ form .button {
     width: 5px;
   }
 }
+/* Styling for the bottom section */
+.container .bottom-section {
+  margin-top: 20px; /* Adds space from the buttons above */
+  text-align: center; /* Centers the text */
+  font-size: 16px; /* Adjusts the font size */
+  font-weight: 500; /* Makes the text slightly bold */
+  color: #262626; /* Neutral color to balance the design */
+}
+
+  .container .bottom-section a {
+    color: #71b7e6; /* Matches the gradient theme */
+    text-decoration: none; /* Removes underline */
+    font-weight: 600; /* Slightly bolder text for emphasis */
+    transition: all 0.3s ease; /* Adds a smooth hover effect */
+  }
+
+    .container .bottom-section a:hover {
+      text-decoration: underline; /* Adds underline on hover */
+      color: #9b59b6; /* Changes to gradient-complementary color on hover */
+    }
 /* Responsive media query code for mobile devices */
 @media(max-width: 459px) {
   .container .content .category {

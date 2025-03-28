@@ -4,7 +4,7 @@
 /* Profile Page Container */
 .Profile_container {
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +19,7 @@
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  margin-top: 110px;
 }
 
 .title {
