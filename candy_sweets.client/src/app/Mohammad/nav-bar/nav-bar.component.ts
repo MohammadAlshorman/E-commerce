@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
+import { Component } from '@angular/core';
+import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -26,9 +28,19 @@ export class NavBarComponent implements OnInit {
       this.userName = name;
     });
   }
+export class NavBarComponent {
+  constructor(private ser: SuleimanserviceService) { }
+  cartItemCount: number = 0
+  ngOnInit() {
+    this.ser.cartCount$.subscribe(count => {
+      this.cartItemCount = count;
+      
+    })
 
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/Home/Login']);
+  }
+}
   }
 }

@@ -15,6 +15,7 @@ export class ProductsComponent {
   ngOnInit() {
     this.id = this._active.snapshot.paramMap.get('id')
     this.showProductBycategoryId(this.id)
+    this.getProductByCategoryID();
   }
   productData: any
   showProductBycategoryId(id: any) {
@@ -24,4 +25,18 @@ export class ProductsComponent {
     })
   }
 
+
+  databycategoryid: any
+  getProductByCategoryID() {
+    this.ser.getAllProduct().subscribe((d) => {
+      this.databycategoryid = d;
+
+    })
+  }
+
+  getRandomFourItems() {
+    return [...this.databycategoryid]
+      .sort(() => 0.5 - Math.random())
+      .slice(0, 4);
+  }
 }

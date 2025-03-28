@@ -13,7 +13,7 @@
             <h5>Price :<span>${{prodata.price}}</span></h5>
             <div class="quantity_box">
               <label for="quantity">Quantity :</label>
-              <input type="number" name="quantity" ngModel placeholder="1" id="quantity">
+              <input type="number" name="quantity" ngModel value="1" id="quantity">
               <input type="hidden" name="productId" [(ngModel)]="prodata.id" />
             </div>
             <!--<a class="pink_more" href="#">Add to Cart</a>-->
@@ -141,54 +141,19 @@
       <h2>Similar Products</h2>
     </div>
     <div class="row similar_product_inner">
-      <div class="col-lg-3 col-md-4 col-6">
+      <div class="col-lg-3 col-md-4 col-6" *ngFor="let i of getRandomFourItems()">
         <div class="cake_feature_item">
           <div class="cake_img">
-            <img src="img/cake-feature/c-feature-1.jpg" alt="">
+            <img style="width:100%;" src="{{i.imageUrl}}" alt="">
           </div>
           <div class="cake_text">
-            <h4>$29</h4>
-            <h3>Strawberry Cupcakes</h3>
-            <a class="pest_btn" href="#">Add to cart</a>
+            <h4>${{i.price}}</h4>
+            <h3>{{i.name}}</h3>
+            <a class="pest_btn" routerLink="/productDetail/{{i.id}}">View Details</a>
           </div>
         </div>
       </div>
-      <div class="col-lg-3 col-md-4 col-6">
-        <div class="cake_feature_item">
-          <div class="cake_img">
-            <img src="img/cake-feature/c-feature-2.jpg" alt="">
-          </div>
-          <div class="cake_text">
-            <h4>$29</h4>
-            <h3>Strawberry Cupcakes</h3>
-            <a class="pest_btn" href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6">
-        <div class="cake_feature_item">
-          <div class="cake_img">
-            <img src="img/cake-feature/c-feature-3.jpg" alt="">
-          </div>
-          <div class="cake_text">
-            <h4>$29</h4>
-            <h3>Strawberry Cupcakes</h3>
-            <a class="pest_btn" href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-4 col-6">
-        <div class="cake_feature_item">
-          <div class="cake_img">
-            <img src="img/cake-feature/c-feature-4.jpg" alt="">
-          </div>
-          <div class="cake_text">
-            <h4>$29</h4>
-            <h3>Strawberry Cupcakes</h3>
-            <a class="pest_btn" href="#">Add to cart</a>
-          </div>
-        </div>
-      </div>
+      
     </div>
   </div>
 </section>

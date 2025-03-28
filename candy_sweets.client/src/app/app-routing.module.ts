@@ -18,20 +18,25 @@ import { ProductsComponent } from './Suleiman/products/products.component';
 import { ProductDetailsComponent } from './Suleiman/product-details/product-details.component';
 import { ManageProductComponent } from './Ahmad/manage-product/manage-product.component';
 import { DashboardComponent } from './Ahmad/admin-dashboard/admin-dashboard.component';
+import { CartComponent } from './Suleiman/cart/cart.component';
 
 
  
 
 
 const routes: Routes = [
-  { path: "", component: HomeComponent },
+
+
 
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductsComponent },
   { path: 'productDetail/:id', component: ProductDetailsComponent },
+  { path: 'cart', component: CartComponent },
 
   {
     
+  
+  {
     path: 'Home', component: LandingPageComponent, children:
       [
         { path: 'Login', component: LoginComponent },
@@ -64,6 +69,11 @@ const routes: Routes = [
   {
     path: 'HomeUser', component:HomeComponent
   }
+
+  {path: 'getcategories', component: ManageCategoriesComponent},
+  {path: 'addcategories', component: AddCategorieComponent},
+  {path: 'editcategories/:id', component: EditCategorieComponent},
+  {path: 'getusers', component: GetUsersComponent}
   
 ];
 

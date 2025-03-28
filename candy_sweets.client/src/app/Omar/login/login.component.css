@@ -11,43 +11,45 @@
 }
 
 .wrapper {
-  width: 380px;
+  width: 90%;
+  max-width: 450px;
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-top: 140px;
 }
 
   .wrapper .title {
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 600;
     text-align: center;
-    line-height: 100px;
     color: #fff;
-    user-select: none;
     border-radius: 15px 15px 0 0;
     background: linear-gradient(-135deg, #FF69B4, #FF1493);
   }
 
   .wrapper form {
-    padding: 10px 30px 50px 30px;
+    display: flex;
+    flex-direction: column;
   }
 
     .wrapper form .field {
-      height: 50px;
-      width: 100%;
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
       position: relative;
+      margin-bottom: 20px;
     }
 
       .wrapper form .field input {
-        height: 100%;
+        height: 50px;
         width: 100%;
         outline: none;
-        font-size: 17px;
-        padding-left: 20px;
+        font-size: 16px;
+        padding: 12px 15px;
         border: 1px solid lightgrey;
         border-radius: 25px;
-        transition: all 0.3s ease;
+        transition: 0.3s ease;
       }
 
         .wrapper form .field input:focus,
@@ -57,14 +59,13 @@
 
       .wrapper form .field label {
         position: absolute;
-        top: 50%;
-        left: 20px;
-        color: #999999;
-        font-weight: 400;
-        font-size: 17px;
-        pointer-events: none;
-        transform: translateY(-50%);
-        transition: all 0.3s ease;
+        top: 15px;
+        left: 15px;
+        font-size: 16px;
+        color: #999;
+        transition: 0.3s ease;
+        background: #fff;
+        padding: 0 5px;
       }
 
 form .field input:focus ~ label,
@@ -76,32 +77,26 @@ form .field input:valid ~ label {
   transform: translateY(-50%);
 }
 
-form .content {
-  display: flex;
+/*Error message styling*/
+.error-message {
+  color: red;
+  font-size: 14px;
+  font-weight: 500;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 5px;
   width: 100%;
-  height: 50px;
-  font-size: 16px;
-  align-items: center;
-  justify-content: space-around;
+  display: block;
+  min-height: 20px;
+  padding: 5px 10px;
+  margin-top: 5px;
+  /* visibility: visible; Ensures error message remains visible */
 }
 
-  form .content .checkbox {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  form .content input {
-    width: 15px;
-    height: 15px;
-    background: red;
-  }
-
-  form .content label {
-    color: #262626;
-    user-select: none;
-    padding-left: 5px;
-  }
+/* Ensures enough space between input and error message */
+/*.wrapper form .field input:not(:placeholder-shown) + .error-message,
+.wrapper form .field input:focus + .error-message {
+  visibility: visible;
+}*/
 
 form .field input[type="submit"] {
   color: #fff;
@@ -115,24 +110,25 @@ form .field input[type="submit"] {
   transition: all 0.3s ease;
 }
 
-  form .field input[type="submit"]:active {
-    transform: scale(0.95);
-  }
+    .wrapper form .field input[type="submit"]:hover {
+      opacity: 0.9;
+    }
 
-form .signup-link {
-  color: #262626;
-  margin-top: 20px;
+.wrapper form .signup-link {
   text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+  color: #262626;
 }
 
   form .pass-link a,
   form .signup-link a {
     color: #FF1493;
     text-decoration: none;
+    font-weight: 600;
   }
 
-    form .pass-link a:hover,
-    form .signup-link a:hover {
+    .wrapper form .signup-link a:hover {
       text-decoration: underline;
     }
 .custom-toast {

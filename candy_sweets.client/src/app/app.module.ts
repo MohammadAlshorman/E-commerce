@@ -26,6 +26,8 @@ import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
 import { CategoryComponent } from './Suleiman/category/category.component';
 import { ProductsComponent } from './Suleiman/products/products.component';
 import { DashboardComponent } from './Ahmad/admin-dashboard/admin-dashboard.component';
+import { CartComponent } from './Suleiman/cart/cart.component';
+
 
 
 
@@ -60,6 +62,9 @@ import { DashboardComponent } from './Ahmad/admin-dashboard/admin-dashboard.comp
     ProductsComponent,
     DashboardComponent
     
+    ProductsComponent,
+    CartComponent,
+   
   ],
   imports: [
     BrowserModule, HttpClientModule,
