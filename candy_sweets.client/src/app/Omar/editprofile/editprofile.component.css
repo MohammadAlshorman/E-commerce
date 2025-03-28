@@ -22,8 +22,8 @@
 }
 
   .container h1 {
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 28px;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
     color: #303339; /* Updated */
@@ -33,6 +33,7 @@
     font-weight: 500;
     margin-bottom: 5px;
     display: block;
+    color: #FF69B4;
   }
 
   .container input {
@@ -54,13 +55,12 @@
 
 button {
   height: 45px;
-  width: 100%;
+  width: 32%;
   border: none;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
   color: #fff;
-  margin-top: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
 }

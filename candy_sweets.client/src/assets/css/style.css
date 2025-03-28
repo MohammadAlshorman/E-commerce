@@ -535,7 +535,7 @@ i:before {
 }
 
 .top_header_area .float-right .h_search li.shop_cart a:before {
-  content: "3";
+  
   height: 18px;
   width: 18px;
   font-size: 11px;

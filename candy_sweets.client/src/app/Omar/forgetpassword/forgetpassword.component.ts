@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CustomerLoginRegistrationService } from '../Service_User_API/customer-login-registration.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-forgetpassword',
   standalone: false,
@@ -9,37 +11,63 @@ import { Router } from '@angular/router';
 })
 export class ForgetpasswordComponent {
   email: string = '';
-  randomCode: string = ''; // Random code for verification
-  emailVerified: boolean = false; // To track if email verification is done
+  randomCode: string = ''; 
+  emailVerified: boolean = false; 
+  user: any;
 
   constructor(private user_api: CustomerLoginRegistrationService, private router: Router) { }
 
   verifyEmail() {
     this.user_api.Get_User_Login().subscribe((data) => {
-      const user = data.find((u: any) => u.email === this.email);
+      this.user = data.find((u: any) => u.email === this.email);
 
-      if (user) {
-        // Email is valid
-        alert('Email verified. A verification code has been sent to your email.');
-        this.randomCode = this.generateRandomCode(); // Generate random code
-        console.log('Generated Code (Simulated):', this.randomCode); // Simulate sending email
-        this.emailVerified = true; // Allow user to proceed to the next step
+      if (this.user) {
+        this.randomCode = this.generateRandomCode(); 
+
+       
+        console.log('Generated Code (Simulated):', this.randomCode);
+        Swal.fire({
+          icon: 'success',
+          title: 'Email Verified',
+          text: 'A verification code has been sent to your email.',
+          confirmButtonColor: '#FF69B4'
+        });
+
+        this.emailVerified = true; 
       } else {
-        alert('Email does not exist in the system.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid Email',
+          text: 'Email does not exist in the system.',
+          confirmButtonColor: '#FF69B4'
+        });
       }
     });
   }
 
   generateRandomCode(): string {
-    return Math.floor(100000 + Math.random() * 900000).toString(); // Generate a 6-digit code
+    return Math.floor(100000 + Math.random() * 900000).toString();
   }
+
 
   submitCode(inputCode: string) {
     if (inputCode === this.randomCode) {
-      alert('Code verified successfully.');
-      this.router.navigate(['/Home/LastStep'], { state: { email: this.email } }); // Navigate to reset password
+      Swal.fire({
+        icon: 'success',
+        title: 'Code Verified Successfully',
+        text: 'You can now reset your password.',
+        confirmButtonColor: '#FF69B4'
+      }).then(() => {
+        sessionStorage.setItem('verifiedEmail', this.email);
+        this.router.navigate(['/Home/LastStep']);
+      });
     } else {
-      alert('Invalid code. Please try again.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Invalid Code',
+        text: 'Please try again.',
+        confirmButtonColor: '#FF69B4'
+      });
     }
   }
 }

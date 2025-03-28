@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CustomerLoginRegistrationService } from '../Service_User_API/customer-login-registration.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-resetpassword',
   standalone: false,
@@ -23,31 +25,62 @@ export class ResetpasswordComponent {
           this.user = data.find((u: any) => u.ID === userId);
         });
       } else {
-        alert('No user is logged in!');
-        this.router.navigate(['/Home/Login']); // Redirect to login if no user is logged in
+        Swal.fire({
+          icon: 'error',
+          title: 'No User Logged In',
+          text: 'No user is logged in. Redirecting to login page.',
+          confirmButtonColor: '#FF69B4'
+        }).then(() => {
+          this.router.navigate(['/Home/Login']);
+        });
       }
     });
   }
 
   changePassword(): void {
     if (this.oldPassword !== this.user.password) {
-      alert('Old Password is incorrect.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Incorrect Password',
+        text: 'Old Password is incorrect.',
+        confirmButtonColor: '#FF69B4'
+      });
       return;
     }
 
     if (this.newPassword !== this.confirmNewPassword) {
-      alert('New Password and Confirm Password do not match.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Password Mismatch',
+        text: 'New Password and Confirm Password do not match.',
+        confirmButtonColor: '#FF69B4'
+      });
       return;
     }
 
     // Update the user's password
     this.user.password = this.newPassword;
     this.user_api.Update_User(this.user.ID, this.user).subscribe(() => {
-      alert('Password changed successfully!');
-      this.router.navigate(['/Home/Profile']); // Redirect to the Profile page
+      Swal.fire({
+        icon: 'success',
+        title: 'Password Changed Successfully!',
+        text: 'Your password has been updated successfully.',
+        confirmButtonColor: '#FF69B4'
+      }).then(() => {
+        this.router.navigate(['/Home/Profile']);
+      });
     }, (error) => {
       console.error('Error changing password:', error);
-      alert('There was an issue changing your password. Please try again.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'There was an issue changing your password. Please try again.',
+        confirmButtonColor: '#FF69B4'
+      });
     });
+  }
+
+  goBackToProfile() {
+    this.router.navigate(['/Home/Profile']);
   }
 }

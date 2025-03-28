@@ -1,43 +1,124 @@
 import { Component } from '@angular/core';
 import { AbdService } from './Service/abd.service';
 import { ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-manage-categories',
   standalone: false,
   templateUrl: './manage-categories.component.html',
-  styleUrl: './manage-categories.component.css'
+  styleUrls: ['./manage-categories.component.css']
 })
 export class ManageCategoriesComponent {
 
+  Categorys: any = [];
+  isEditMode: boolean = false;
+  editCategoryId: string = '';
+  showCategoryModal: boolean = false;
+  showDeleteModal: boolean = false;
+  categoryToDeleteId: string = '';
+
+  categoryFormData = { name: '' };
 
   constructor(private ser: AbdService, private _active: ActivatedRoute) { }
 
   ngOnInit() {
-
-    this.getData()
+    this.getData();
   }
-
-  Categorys: any
 
   getData() {
     this.ser.getCategory().subscribe((data) => {
-
       this.Categorys = data;
-
-    })
+    });
   }
 
-
-  id: any
-  deletecategory(id: any) {
-    this.ser.deleteCategory(id).subscribe(() => {
-
-      alert("Category Added")
-
-    })
+  openCategoryModal() {
+    this.resetForm();
+    this.showCategoryModal = true;
   }
 
+  closeCategoryModal() {
+    this.showCategoryModal = false;
+  }
 
+  addCategory() {
+    if (this.categoryFormData.name.trim() === '') {
+      this.showAlert('Please enter a category name.', 'error');
+      return;
+    }
 
+    this.ser.addCategory(this.categoryFormData).subscribe(() => {
+      this.showAlert('Category Added Successfully', 'success');
+      this.getData();
+      this.closeCategoryModal();
+      this.resetForm();
+    });
+  }
+
+  editCategory(category: any) {
+    this.isEditMode = true;
+    this.editCategoryId = category.id;
+    this.categoryFormData = { name: category.name };
+    this.showCategoryModal = true;
+  }
+
+  updateCategory() {
+    if (this.categoryFormData.name.trim() === '') {
+      this.showAlert('Please enter a category name.', 'error');
+      return;
+    }
+
+    this.ser.editCategory(this.editCategoryId, this.categoryFormData).subscribe(() => {
+      this.showAlert('Category Updated Successfully', 'success');
+      this.getData();
+      this.closeCategoryModal();
+      this.resetForm();
+    });
+  }
+
+  confirmDeleteCategory(id: any) {
+    this.categoryToDeleteId = id;
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.deleteCategory();
+      }
+    });
+  }
+
+  deleteCategory() {
+    this.ser.deleteCategory(this.categoryToDeleteId).subscribe(() => {
+      this.showAlert('Category Deleted Successfully', 'success');
+      this.getData();
+      this.closeDeleteModal();
+    });
+  }
+
+  closeDeleteModal() {
+    this.showDeleteModal = false;
+    this.categoryToDeleteId = '';
+  }
+
+  resetForm() {
+    this.categoryFormData = { name: '' };
+    this.isEditMode = false;
+    this.editCategoryId = '';
+  }
+
+  showAlert(message: string, type: 'success' | 'error') {
+    Swal.fire({
+      icon: type,
+      title: type === 'success' ? 'Success!' : 'Error!',
+      text: message,
+      confirmButtonColor: '#FF69B4'
+    });
+  }
 }

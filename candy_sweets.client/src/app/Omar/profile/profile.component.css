@@ -1,7 +1,5 @@
-/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-/* Profile Page Container */
 .Profile_container {
   font-family: 'Poppins', sans-serif;
   height: 150vh;
@@ -12,20 +10,17 @@
   background: linear-gradient(135deg, #f195b2, #303339); /* Same gradient as Register Page */
 }
 
+
 .container {
-  max-width: 700px;
+  max-width: 600px;
   width: 100%;
   background-color: #fff;
-  padding: 25px 30px;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  margin-top: 110px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
-.title {
-  font-size: 25px;
-  font-weight: 500;
-  position: relative;
+.profile-header {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -42,45 +37,39 @@
     background: linear-gradient(135deg, #f195b2, #303339);
   }
 
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #FF1493;
+}
+
 .user-details {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 20px 0;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .detail-box {
-  margin-bottom: 15px;
-  width: 100%; /* Full width for details */
-}
-
-.details {
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin: 10px auto;
-  display: block; /* Center the image */
+  padding: 10px;
+  background: #f2f2f2;
+  border-radius: 5px;
+  border-left: 4px solid #FF69B4;
 }
 
 .button {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
 }
 
 .pink-button {
-  height: 45px;
-  width: 48%; /* Half width for buttons */
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
   border-radius: 5px;
-  border: none;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white;
+  text-decoration: none;
   cursor: pointer;
   background: linear-gradient(135deg,#f195b2, #303339);
   text-align: center;
@@ -92,19 +81,12 @@
     background: linear-gradient(-135deg,#f195b2, #303339);
   }
 
-/* Responsive Design */
-@media(max-width: 584px) {
+@media(max-width: 600px) {
   .container {
-    max-width: 100%;
-  }
-
-  .button {
-    flex-direction: column;
-    align-items: center;
+    padding: 20px;
   }
 
   .pink-button {
-    width: 100%; /* Full width for buttons on smaller screens */
-    margin-bottom: 10px;
+    width: 100%;
   }
 }

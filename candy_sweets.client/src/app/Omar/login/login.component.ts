@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CustomerLoginRegistrationService } from '../Service_User_API/customer-login-registration.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,54 +19,37 @@ export class LoginComponent {
 
   ngOnInit() { }
 
-  // Custom email validation
-  validateEmail(): void {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic regex for email format
-    if (!this.emailInput) {
-      this.emailError = 'Email is required.';
-    } else if (!emailRegex.test(this.emailInput)) {
-      this.emailError = 'Please enter a valid email address.';
-    } else {
-      this.emailError = null; // Clear error if valid
-    }
-  }
-
-  // Custom password validation
-  validatePassword(): void {
-    if (!this.passwordInput) {
-      this.passwordError = 'Password is required.';
-    } else if (this.passwordInput.length < 8) {
-      this.passwordError = 'Password must be at least 8 characters long.';
-    } else {
-      this.passwordError = null; // Clear error if valid
-    }
-  }
-
-  // Form submission logic
-  getData(enteredUser: any): void {
-    // Perform final validation before submitting
-    this.validateEmail();
-    this.validatePassword();
-
-    // Only proceed if there are no validation errors
-    if (this.emailError || this.passwordError) {
-      alert('Please correct the errors before submitting the form.');
-      return;
+  getData(enteredUser: any) {
+    if (!enteredUser.email || !enteredUser.password) {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Incomplete Information',
+        text: 'Please fill in both Email and Password.',
+        confirmButtonColor: '#FF69B4'
+      });
+      return; 
     }
 
     this.user_api.Get_User_Login().subscribe((data) => {
-      console.log('API Response:', data);
-      let user = data.find(
-        (p: any) =>
-          p.email === enteredUser.email && p.password === enteredUser.password
-      );
-      console.log('API Response:', user);
+      let user = data.find((p: any) => p.email == enteredUser.email && p.password == enteredUser.password);
+
       if (user) {
-        alert('Login successfully');
-        this.user_api.setUserId(user.ID); // Save the logged-in user's ID
-        this._route.navigate(['/Home/Profile']);
+        Swal.fire({
+          icon: 'success',
+          title: 'Login Successful',
+          text: 'You have successfully logged in!',
+          confirmButtonColor: '#FF69B4'
+        }).then(() => {
+          this.user_api.login(user.ID, user.name);
+          this._route.navigate(['/']);
+        });
       } else {
-        alert('Invalid Email or Password');
+        Swal.fire({
+          icon: 'error',
+          title: 'Invalid Login',
+          text: 'Invalid Email or Password. Please try again.',
+          confirmButtonColor: '#FF69B4'
+        });
       }
     });
   }

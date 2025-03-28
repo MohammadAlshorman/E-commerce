@@ -54,8 +54,9 @@
         transition: 0.3s ease;
       }
 
-        .wrapper form .field input:focus {
-          border-color: #4158d0;
+        .wrapper form .field input:focus,
+        form .field input:valid {
+          border-color: #FF69B4;
         }
 
       .wrapper form .field label {
@@ -130,26 +131,29 @@
     .wrapper form .signup-link a:hover {
       text-decoration: underline;
     }
-
-/* Responsive Design */
-@media (max-width: 480px) {
-  .wrapper {
-    width: 100%;
-    padding: 20px;
-  }
-
-    .wrapper .title {
-      font-size: 24px;
-    }
-
-    .wrapper form .field input {
-      font-size: 14px;
-    }
+.custom-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: grey;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+  transform: translateY(-20px);
+  z-index: 9999;
 }
 
+  .custom-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
+  .custom-toast.success {
+    background-color: #28a745; 
+  }
 
-
-
-
-
+  .custom-toast.error {
+    background-color: #dc3545; 
+  }

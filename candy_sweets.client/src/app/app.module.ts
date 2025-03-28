@@ -8,7 +8,6 @@ import { LandingPageComponent } from './Omar/landing-page/landing-page.component
 import { ShoePageComponent } from './Mohammad/shoe-page/shoe-page.component';
 import { ProductDetailsComponent } from './Suleiman/product-details/product-details.component';
 import { CartPageComponent } from './Sofyan/cart-page/cart-page.component';
-import { AdminDashboardComponent } from './Suhaib/admin-dashboard/admin-dashboard.component';
 import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-categories.component';
 import { ManageProductComponent } from './Ahmad/manage-product/manage-product.component';
 import { NavBarComponent } from './Mohammad/nav-bar/nav-bar.component';
@@ -26,6 +25,8 @@ import { GetUsersComponent } from './Abdallah/manage-categories/get-users/get-us
 import { ChatbotComponent } from './Suleiman/chatbot/chatbot.component';
 import { CategoryComponent } from './Suleiman/category/category.component';
 import { ProductsComponent } from './Suleiman/products/products.component';
+import { DashboardComponent } from './Ahmad/admin-dashboard/admin-dashboard.component';
+import { CartComponent } from './Suleiman/cart/cart.component';
 
 
 
@@ -37,7 +38,6 @@ import { ProductsComponent } from './Suleiman/products/products.component';
     ShoePageComponent,
     ProductDetailsComponent,
     CartPageComponent,
-    AdminDashboardComponent,
     ManageProductComponent,
     ManageCategoriesComponent,
     NavBarComponent,
@@ -60,6 +60,10 @@ import { ProductsComponent } from './Suleiman/products/products.component';
     GetUsersComponent,
     CategoryComponent,
     ProductsComponent,
+    DashboardComponent
+    
+    ProductsComponent,
+    CartComponent,
    
   ],
   imports: [

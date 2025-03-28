@@ -1,6 +1,4 @@
-/* Importing Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 
 .Reigster_container {
   font-family: 'Poppins', sans-serif;
@@ -11,6 +9,7 @@
   padding: 10px;
   background: linear-gradient(135deg, #f195b2, #303339);
 }
+
 .container {
   max-width: 700px;
   width: 100%;
@@ -18,7 +17,6 @@
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-  margin-top: 100px;
 }
 
   .container .title {
@@ -114,7 +112,7 @@ form input[type="radio"] {
 
 form .button {
   height: 45px;
-  margin: 35px 0
+  margin: 35px 0;
 }
 
   form .button input {
@@ -252,3 +250,18 @@ form .button {
     flex-direction: column;
   }
 }
+input, select {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+  input:focus, select:focus {
+    border-color: #9b59b6;
+  }
