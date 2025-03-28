@@ -6,12 +6,25 @@
     </div>
 
     <div class="user-details">
-      <div class="detail-box"><strong>Name:</strong> {{ user.name }}</div>
-      <div class="detail-box"><strong>Email:</strong> {{ user.email }}</div>
-      <div class="detail-box"><strong>Address:</strong> {{ user.address }}</div>
-      <div class="detail-box"><strong>Phone:</strong> {{ user.phone }}</div>
+      <div class="detail-box">
+        <img [src]="user.image" alt="User Image" class="profile-image">
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Name:</strong></span> {{ user.name }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Address:</strong></span> {{ user.address }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Gender:</strong></span> {{ user.Gender }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>BirthDate:</strong></span> {{ user.BirthDate }}</p>
+      </div>
+      <div class="detail-box">
+        <p><span class="details"><strong>Phone Number:</strong></span> {{ user.phone }}</p>
+      </div>
     </div>
-
     <div class="button">
       <a routerLink="/Home/EditProfile" class="pink-button">Edit Profile</a>
     </div>

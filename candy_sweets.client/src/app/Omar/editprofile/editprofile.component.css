@@ -3,13 +3,13 @@
 
 .EditProfile_container {
   font-family: 'Poppins', sans-serif;
-  height: 100vh;
+  height: 120vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: url('/assets/img/banner/banner-bg.jpg') no-repeat center center;
-  background-size: cover;
+  background: linear-gradient(135deg, #f195b2, #303339); /* Updated */
+  margin-top: 110px;
 }
 
 .container {
@@ -26,7 +26,7 @@
     font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
-    color: #FF69B4;
+    color: #303339; /* Updated */
   }
 
   .container label {
@@ -50,15 +50,8 @@
 
     .container input:focus,
     .container input:valid {
-      border-color: #FF69B4;
+      border-color: #303339; /* Updated */
     }
-
-.buttons-container {
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
-  justify-content: space-between;
-}
 
 button {
   height: 45px;
@@ -73,23 +66,17 @@ button {
 }
 
   button.btn-primary {
-    background: linear-gradient(135deg, #FF69B4, #FF1493);
+    background: linear-gradient(135deg, #f195b2, #303339); /* Updated */
   }
 
     button.btn-primary:hover {
-      background: linear-gradient(-135deg, #FF69B4, #FF1493);
+      background: linear-gradient(-135deg, #f195b2, #303339); /* Updated */
     }
 
   button.btn-secondary {
-    background: linear-gradient(135deg, #FF69B4, #FF1493);
+    background: linear-gradient(135deg, #f195b2, #303339); /* Updated */
   }
 
     button.btn-secondary:hover {
-      background: linear-gradient(-135deg, #FF69B4, #FF1493);
+      background: linear-gradient(-135deg, #f195b2, #303339); /* Updated */
     }
-
-  button.btn-back {
-    background: linear-gradient(135deg, #FF69B4, #FF1493);
-  }
-
- 

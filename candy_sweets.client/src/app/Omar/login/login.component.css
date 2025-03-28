@@ -5,9 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background: url('/assets/img/banner/banner-bg.jpg') no-repeat center center; 
-  background-size: cover; 
+  height: 115vh;
+  background: linear-gradient(-135deg, #f195b2, #303339);
+  padding: 20px;
 }
 
 .wrapper {
@@ -26,7 +26,9 @@
     text-align: center;
     color: #fff;
     border-radius: 15px 15px 0 0;
-    background: linear-gradient(-135deg, #FF69B4, #FF1493);
+    background: linear-gradient(-135deg, #f195b2, #303339);
+    padding: 20px;
+    margin-bottom: 30px;
   }
 
   .wrapper form {
@@ -68,14 +70,12 @@
         padding: 0 5px;
       }
 
-form .field input:focus ~ label,
-form .field input:valid ~ label {
-  top: 0%;
-  font-size: 16px;
-  color: #FF69B4;
-  background: #fff;
-  transform: translateY(-50%);
-}
+      .wrapper form .field input:focus ~ label,
+      .wrapper form .field input:valid ~ label {
+        top: -10px;
+        font-size: 14px;
+        color: #797979;
+      }
 
 /*Error message styling*/
 .error-message {
@@ -92,23 +92,24 @@ form .field input:valid ~ label {
   /* visibility: visible; Ensures error message remains visible */
 }
 
-/* Ensures enough space between input and error message */
-/*.wrapper form .field input:not(:placeholder-shown) + .error-message,
-.wrapper form .field input:focus + .error-message {
-  visibility: visible;
-}*/
 
-form .field input[type="submit"] {
-  color: #fff;
-  border: none;
-  padding-left: 0;
-  margin-top: -10px;
-  font-size: 20px;
-  font-weight: 500;
-  cursor: pointer;
-  background: linear-gradient(-135deg, #FF69B4, #FF1493);
-  transition: all 0.3s ease;
+
+/* Fixes height to prevent overlapping */
+.wrapper form .field {
+ /* min-height: 90px; Adjusted to accommodate input and error message */
 }
+
+  .wrapper form .field input[type="submit"] {
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    background: linear-gradient(-135deg, #f195b2, #303339);
+    padding: 15px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+  }
 
     .wrapper form .field input[type="submit"]:hover {
       opacity: 0.9;
@@ -121,9 +122,8 @@ form .field input[type="submit"] {
   color: #262626;
 }
 
-  form .pass-link a,
-  form .signup-link a {
-    color: #FF1493;
+  .wrapper form .signup-link a {
+    color: #71b7e6;
     text-decoration: none;
     font-weight: 600;
   }

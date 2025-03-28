@@ -2,13 +2,12 @@
 
 .Profile_container {
   font-family: 'Poppins', sans-serif;
-  height: 120vh;
+  height: 150vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: url('/assets/img/banner/banner-bg.jpg') no-repeat center center;
-  background-size: cover; 
+  background: linear-gradient(135deg, #f195b2, #303339); /* Same gradient as Register Page */
 }
 
 
@@ -26,12 +25,17 @@
   margin-bottom: 20px;
 }
 
-.profile-image {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
+  .title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #f195b2, #303339);
+  }
 
 .title {
   font-size: 28px;
@@ -67,11 +71,14 @@
   color: white;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.3s;
+  background: linear-gradient(135deg,#f195b2, #303339);
+  text-align: center;
+  text-decoration: none;
+  line-height: 45px;
 }
 
   .pink-button:hover {
-    background: linear-gradient(135deg, #FF69B4, #FF1493);
+    background: linear-gradient(-135deg,#f195b2, #303339);
   }
 
 @media(max-width: 600px) {

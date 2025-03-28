@@ -10,33 +10,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-//  constructor(private user_api: CustomerLoginRegistrationService, private _route: Router) { }
-//  ngOnInit() { }
-
-//  getData(enteredUser: any) {
-//    //debugger
-//    this.user_api.Get_User_Login().subscribe((data) => {
-//      console.log('API Response:', data);
-//      let user = data.find((p: any) => p.email == enteredUser.email && p.password == enteredUser.password);
-//      console.log('API Response:', user);
-//      if (user) {
-//        alert("login successfully")
-//        // Save the logged-in user's ID in the BehaviorSubject
-//        this.user_api.setUserId(user.ID);
-//        this._route.navigate(['/Home/Profile'])
-//      } else {
-//        alert("Invalid Email or password ")
-
-//      }
-
-//    })
-//  }
-
-//  forgotPassword() {
-//    this._route.navigate(['/Home/Forget']);
-//  }
-//}
-
   emailInput: string = ''; // Two-way binding for the email field
   passwordInput: string = ''; // Two-way binding for the password field
   emailError: string | null = null; // Holds the email error message
