@@ -3026,6 +3026,7 @@ i:before {
 .service_m_item .service_img {
   overflow: hidden;
   position: relative;
+
   z-index: 3;
 }
 

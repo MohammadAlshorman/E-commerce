@@ -1,0 +1,35 @@
+<!-- Page content -->
+<div class="content">
+
+
+
+
+  <table class="table">
+    <thead>
+      <tr>
+
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Role</th>
+        <th scope="col">Gender</th>
+        <th scope="col">action</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users">
+
+        <td>{{user.ID}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.role}}</td>
+        <td>{{user.Gender}}</td>
+
+        <td><button (click)="deleteUsers(user.ID)" class="btn btn-danger">Delete</button></td>
+
+
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>

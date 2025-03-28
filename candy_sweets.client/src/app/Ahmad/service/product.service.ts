@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
 
-  private apiUrl = 'https://67e35b6497fc65f53539606a.mockapi.io/products'; 
+  private apiUrl = 'https://67e35b6497fc65f53539606a.mockapi.io/products';
+  private categoriesApiUrl = 'https://67d293ba90e0670699be2925.mockapi.io/Categories';
+
 
   constructor(private http: HttpClient) { }
 
@@ -26,4 +28,11 @@ export class ProductService {
   updateProduct(id: string, product: any): Observable<any> {
     return this.http.put(`${this.apiUrl}/${id}`, product);
   }
+
+
+  getCategories(): Observable<any[]> {
+    return this.http.get<any[]>(this.categoriesApiUrl);
+  }
+
+
 }
