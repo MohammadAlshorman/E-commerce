@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { SuleimanserviceService } from '../suleimanservice.service';
+import { BehaviorSubject } from 'rxjs';
+import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cart',
@@ -9,11 +13,12 @@ import { SuleimanserviceService } from '../suleimanservice.service';
 })
 export class CartComponent {
 
-  constructor(private ser: SuleimanserviceService) { }
+  constructor(private ser: SuleimanserviceService, private loginserv: CustomerLoginRegistrationService, private _route: Router) { }
 
   ngOnInit() {
     this.getallitemproduct()
     this.getAllVouchers()
+    this.getAlllProduct()
 
   }
   cartData: any
@@ -62,22 +67,39 @@ export class CartComponent {
   
   getSubPrice(): number {
     return this.cartData.reduce((total: number, item: { Price: number; quantity: number; }) => {
-        return total + (item.Price * item.quantity);
+      return total + (item.Price * item.quantity);
     }, 0);
   }
-
+  totalafterdiscount: number = 0;
   getTotalPrice(): number {
     let total = this.cartData.reduce((total: number, item: { Price: number; quantity: number; }) => {
       return total + (item.Price * item.quantity);
     }, 0);
+    this.totalafterdiscount = total - this.discountValue;
+    this.ser.carttotalprice.next(this.totalafterdiscount)
+    return this.totalafterdiscount; // تطبيق الخصم على المجموع النهائي
+  }
+ 
 
-    return total - this.discountValue; // تطبيق الخصم على المجموع النهائي
+  log: any
+  isLogin() {
+    this.loginserv.isLoggedIn$.subscribe(d => {
+      this.log = d
+    })
+    if (this.log != 0) {
+      this._route.navigate(['/checkout'])
+    }
+    else {
+      this._route.navigate(['/Home/Login'])
+    }
   }
 
-  //getProductName(productId: number) {
-  //  const product = this.productdata.find((pro: any) => pro.id == productId);
-  //  return product ? product.name : 'Unknown Category';
-  //}
+
+  getProductName(productId: number) {
+    this.ser.getAllProduct()
+    const product = this.productdata.find((pro: any) => pro.id == productId);
+    return product.name;
+  }
 
 
-}
+} 

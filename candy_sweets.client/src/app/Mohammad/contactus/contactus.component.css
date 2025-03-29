@@ -1,0 +1,10 @@
+/* تعريف الزر مع الـ hover */
+#btncont {
+  background-color: #f195b2;
+  color: white;
+  transition: background-color 0.3s ease; /* لتأثير الانتقال السلس */
+}
+
+  #btncont:hover {
+    background-color: #e16899; /* اللون الذي يظهر عند التمرير */
+  }

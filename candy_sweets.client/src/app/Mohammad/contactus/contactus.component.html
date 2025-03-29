@@ -1,0 +1,73 @@
+<section class="banner_area">
+  <div class="container">
+    <div class="banner_text">
+      <h3>Contact Us</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="single-blog.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--================End Main Header Area =================-->
+<!--================Contact Form Area =================-->
+<section class="contact_form_area p_100">
+  <div class="container">
+    <div class="main_title">
+      <h2>Get In Touch</h2>
+      <h5>Do you have anything in your mind to let us know?  Kindly don't delay to connect to us by means of our contact form.</h5>
+    </div>
+    <div class="row">
+      <div class="col-lg-7">
+        <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contactForm" id="contactForm">
+          <div id="sendmessage" style="display: none;" class="alert alert-success">Thank you!🌷<br>The form has been submitted successfully.✅<br>We will reply to you soon!⏳</div>
+          <div id="errormessage" style="display: none;" class="alert alert-danger">Failed to send the❌ message. Please try again!</div>
+
+          <div class="row">
+            <div class="col-md-12 mb-3">
+              <input type="text" name="name" class="form-control" [(ngModel)]="formData.name" placeholder="Your Name" required minlength="4" />
+            </div>
+            <div class="col-md-12 mb-3">
+              <input type="email" name="email" class="form-control" [(ngModel)]="formData.email" placeholder="Your Email" required />
+            </div>
+            <div class="col-md-12 mb-3">
+              <input type="tel" name="phone" class="form-control" [(ngModel)]="formData.phone" placeholder="Number Phone" required />
+            </div>
+            <div class="col-md-12 mb-3">
+              <input type="text" name="subject" class="form-control" [(ngModel)]="formData.subject" placeholder="Subject" required minlength="4" />
+            </div>
+            <div class="col-md-12 mb-3">
+              <textarea name="message" class="form-control" rows="5" [(ngModel)]="formData.message" placeholder="Message" required></textarea>
+            </div>
+            <div class="col-md-12 text-center">
+              <button type="submit" class="btn btn-lg" id="btncont">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-4 offset-md-1">
+        <div class="contact_details">
+          <div class="contact_d_item">
+            <h3>Address :</h3>
+            <p>Jordan <br /> Amman & Irbid</p>
+          </div>
+          <div class="contact_d_item">
+            <h5>Phone : <a href="tel:01372466790">0777077970</a></h5>
+            <h5>Email : <a href="mailto:rockybd1995سgmail.com">info&#64;cakebakery.com</a></h5>
+          </div>
+          <div class="contact_d_item">
+            <h3>Opening Hours :</h3>
+            <p>24/7</p>
+            <!--<p>Monday – Sunday</p>-->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--================End Contact Form Area =================-->
+<!--================End Banner Area =================-->
+<section class="map_area">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d467.70598309106015!2d35.8498496!3d32.552615599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151c7715f2c2e7ab%3A0x51755840c8ddbefd!2sOrange%20Digital%20Village%20Irbid!5e1!3m2!1sar!2sjo!4v1743175266711!5m2!1sar!2sjo" width="1518" height="488" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>

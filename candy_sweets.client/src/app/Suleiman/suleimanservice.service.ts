@@ -51,7 +51,9 @@ export class SuleimanserviceService {
 
   cartCount$ = this.cartCount.asObservable(); // جعل المتغير قابل للاشتراك
 
+  carttotalprice = new BehaviorSubject<number>(0); 
 
+  carttotalprice$ = this.carttotalprice.asObservable();
 
 
 }

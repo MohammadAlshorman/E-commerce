@@ -1,4 +1,3 @@
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
 import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
@@ -9,7 +8,7 @@ import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent {
   isLoggedIn: boolean = false;
   userName: string | null = null;
   cartItemCount: number = 0
@@ -21,6 +20,7 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
+
     });
 
     this.authService.userName$.subscribe(name => {
@@ -34,6 +34,13 @@ export class NavBarComponent implements OnInit {
       this.cartItemCount = count;
 
     })
+     
+  }
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/Home/Login']);
+  }
+
   }
 
 logout(): void {
