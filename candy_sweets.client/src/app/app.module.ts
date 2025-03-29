@@ -60,7 +60,7 @@ import { CartComponent } from './Suleiman/cart/cart.component';
     GetUsersComponent,
     CategoryComponent,
     ProductsComponent,
-    DashboardComponent
+    DashboardComponent,
     
     ProductsComponent,
     CartComponent,

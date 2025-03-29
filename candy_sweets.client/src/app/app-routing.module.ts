@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'productDetail/:id', component: ProductDetailsComponent },
   { path: 'cart', component: CartComponent },
 
-  {
+  
     
   
   {
@@ -68,7 +68,7 @@ const routes: Routes = [
   },
   {
     path: 'HomeUser', component:HomeComponent
-  }
+  },
 
   {path: 'getcategories', component: ManageCategoriesComponent},
   {path: 'addcategories', component: AddCategorieComponent},
