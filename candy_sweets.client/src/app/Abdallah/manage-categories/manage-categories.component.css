@@ -1,0 +1,50 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* General Styling */
+.main-title {
+  color: #FF69B4;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Pink Buttons */
+.pink-button {
+  background-color: #FFB6C1;
+  border: none;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+  .pink-button:hover {
+    background-color: #FF69B4;
+  }
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 10px;
+}
+
+/* Table Styling */
+.table th {
+  background-color: #FFB6C1;
+  color: white;
+  text-align: center;
+}
+
+.table td {
+  text-align: center;
+}
+
+/* Form Styling */
+.form-group label {
+  font-weight: bold;
+}
+
+/* Cancel Button */
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}

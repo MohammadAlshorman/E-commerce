@@ -1,0 +1,17 @@
+
+
+<form #form="ngForm" (ngSubmit)="addCategory(form.value)">
+
+
+
+  <!--<div class="form-group">-->
+  <label for="exampleInputPassword1">Category Name:</label>
+  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Name" ngModel name="name">
+  <!--</div>-->
+  <!--<div class="form-group">-->
+  <label for="exampleInputPassword1">Category Description:</label>
+  <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Description" ngModel name="description">
+  
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

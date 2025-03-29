@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.Profile_container {
+  font-family: 'Poppins', sans-serif;
+  height: 150vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #f195b2, #303339); /* Same gradient as Register Page */
+}
+
+
+.container {
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+  .title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #f195b2, #303339);
+  }
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #FF1493;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.detail-box {
+  padding: 10px;
+  background: #f2f2f2;
+  border-radius: 5px;
+  border-left: 4px solid #FF69B4;
+}
+
+.button {
+  text-align: center;
+}
+
+.pink-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #FFB6C1, #FF69B4);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  background: linear-gradient(135deg,#f195b2, #303339);
+  text-align: center;
+  text-decoration: none;
+  line-height: 45px;
+}
+
+  .pink-button:hover {
+    background: linear-gradient(-135deg,#f195b2, #303339);
+  }
+
+@media(max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  .pink-button {
+    width: 100%;
+  }
+}

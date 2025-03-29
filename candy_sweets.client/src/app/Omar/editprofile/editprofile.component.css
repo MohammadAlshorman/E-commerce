@@ -1,0 +1,82 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.EditProfile_container {
+  font-family: 'Poppins', sans-serif;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #f195b2, #303339); /* Updated */
+  margin-top: 110px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+  .container h1 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #303339; /* Updated */
+  }
+
+  .container label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+    color: #FF69B4;
+  }
+
+  .container input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+  }
+
+    .container input:focus,
+    .container input:valid {
+      border-color: #303339; /* Updated */
+    }
+
+button {
+  height: 45px;
+  width: 32%;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+  button.btn-primary {
+    background: linear-gradient(135deg, #f195b2, #303339); /* Updated */
+  }
+
+    button.btn-primary:hover {
+      background: linear-gradient(-135deg, #f195b2, #303339); /* Updated */
+    }
+
+  button.btn-secondary {
+    background: linear-gradient(135deg, #f195b2, #303339); /* Updated */
+  }
+
+    button.btn-secondary:hover {
+      background: linear-gradient(-135deg, #f195b2, #303339); /* Updated */
+    }

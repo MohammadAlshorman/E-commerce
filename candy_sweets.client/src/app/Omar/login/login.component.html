@@ -1,0 +1,38 @@
+<div class="container-center">
+  <div class="wrapper">
+    
+    <form #login="ngForm" (ngSubmit)="getData(login.value)">
+      <div class="field">
+        <input type="text" class="form-control" name="email" ngModel required>
+        <label>Email Address</label>
+        <div *ngIf="emailError" class="error-message">
+          <small>{{ emailError }}</small>
+        </div>
+      </div>
+
+       
+      <div class="field">
+        <input type="password" class="form-control" name="password" ngModel required>
+        <label>Password</label>
+        <div *ngIf="passwordError" class="error-message">
+          <small>{{ passwordError }}</small>
+        </div>
+      </div>
+
+       
+      <div class="field">
+        <input type="submit" value="Login" [disabled]="emailError || passwordError">
+      </div>
+
+       
+      <div class="signup-link">
+        Not a member? <a routerLink="/Home/Register">Signup now</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+
+
