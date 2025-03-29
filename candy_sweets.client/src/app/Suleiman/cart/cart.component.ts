@@ -101,5 +101,12 @@ export class CartComponent {
     return product.name;
   }
 
+  getProductImg(productId: number) {
+    this.ser.getAllProduct()
+    const product = this.productdata.find((pro: any) => pro.id == productId);
+    return product.imageUrl;
+
+  }
+
 
 } 

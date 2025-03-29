@@ -1,6 +1,6 @@
-import { Router } from '@angular/router';
-import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
 import { Component } from '@angular/core';
+import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
+import { Router } from '@angular/router';
 import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
 
 @Component({
@@ -12,13 +12,12 @@ import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
 export class NavBarComponent {
   isLoggedIn: boolean = false;
   userName: string | null = null;
-
+  cartItemCount: number = 0
   constructor(
     private authService: CustomerLoginRegistrationService,
     private router: Router,
     private ser: SuleimanserviceService
   ) { }
-  cartItemCount: number = 0
   ngOnInit(): void {
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
@@ -28,8 +27,13 @@ export class NavBarComponent {
     this.authService.userName$.subscribe(name => {
       this.userName = name;
     });
+
+
+
+
     this.ser.cartCount$.subscribe(count => {
       this.cartItemCount = count;
+
     })
      
   }
@@ -38,20 +42,6 @@ export class NavBarComponent {
     this.router.navigate(['/Home/Login']);
   }
 
-}
-//export class NavBarComponent {
-//  constructor(private ser: SuleimanserviceService) { }
-//  cartItemCount: number = 0
-//  ngOnInit() {
-//    this.ser.cartCount$.subscribe(count => {
-//      this.cartItemCount = count;
-      
-//    })
+  }
 
-//  logout(): void {
-//    this.authService.logout();
-//    this.router.navigate(['/Home/Login']);
-//  }
-//}
-//  }
-//}
+
