@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: "ourTeam", component: OurTeamComponent },
   { path: "testimonials", component: TestimonialsComponent },
-  { path: "contactus", component: ContactusComponent }  
+  { path: "contactus", component: ContactusComponent }  ,
 
 
 
