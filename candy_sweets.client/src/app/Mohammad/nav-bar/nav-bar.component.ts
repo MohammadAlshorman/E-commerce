@@ -1,5 +1,6 @@
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
 import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
+import { Router } from '@angular/router';
 import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
 
 @Component({
@@ -43,8 +44,4 @@ export class NavBarComponent {
 
   }
 
-logout(): void {
-  this.authService.logout();
-  this.router.navigate(['/Home/Login']);
-}
-}
+
