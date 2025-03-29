@@ -75,6 +75,16 @@ The goal of this project is to create an e-commerce web application for selling 
 5. Figma designs for UI/UX:
    [Figma Design](https://www.figma.com/design/W9zQLkCPe6tW2S7x2LKAht/E-commerce?t=7N3v8GIaLkkKHw4O-1)
 
+## API Endpoints
+
+- **Cart API**: [Cart API Link](https://67e320ca97fc65f53538d273.mockapi.io/Glace/Cart)
+- **Cart Item API**: [Cart Item API Link](https://67e320ca97fc65f53538d273.mockapi.io/Glace/CartItem)
+- **Order API**: [Order API Link](https://67d760e89d5e3a10152ab1ca.mockapi.io/v1/Odrer)
+- **Product API**: [Product API Link](https://67e35b6497fc65f53539606a.mockapi.io/products)
+- **User API**: [User API Link](https://67d293ba90e0670699be2925.mockapi.io/user)
+- **Contact Us API**: [Contact Us API Link](https://67e2c06297fc65f5353772da.mockapi.io/contactus)
+- **Rating API**: [Rating API Link](https://67e44f4e2ae442db76d3ee5f.mockapi.io/rating)
+- **Categories API**: [Categories API Link](https://67d293ba90e0670699be2925.mockapi.io/Categories)
 
 
 ### Learning Methods:
