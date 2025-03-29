@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,9 @@ import { ManageCategoriesComponent } from './Abdallah/manage-categories/manage-c
 import { ManageProductComponent } from './Ahmad/manage-product/manage-product.component';
 import { NavBarComponent } from './Mohammad/nav-bar/nav-bar.component';
 import { FooterComponent } from './Mohammad/footer/footer.component';
+import { AboutAsComponent } from './Mohammad/about-as/about-as.component';
+import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
+import { ContactusComponent } from './Mohammad/contactus/contactus.component';
 
 
 @NgModule({
@@ -27,11 +30,17 @@ import { FooterComponent } from './Mohammad/footer/footer.component';
     ManageProductComponent,
     ManageCategoriesComponent,
     NavBarComponent,
-    FooterComponent
+    FooterComponent,
+    AboutAsComponent,
+    OurTeamComponent,
+    ContactusComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, FormsModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
