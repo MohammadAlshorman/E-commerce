@@ -69,7 +69,7 @@ import { ContactusComponent } from './Mohammad/contactus/contactus.component';
     
     
     CartComponent,
-                CheckoutComponent,
+    CheckoutComponent,
    
     FooterComponent,
     AboutAsComponent,
