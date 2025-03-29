@@ -2,9 +2,10 @@
   <div class="top_header_area row m0">
     <div class="container">
       <div class="float-left">
-        <a href="tell:+18004567890"><i class="fa fa-phone" aria-hidden="true"></i> + (1800) 456 7890</a>
-        <a href="mailto:infocakebakery.com"><i class="fa fa-envelope-o" aria-hidden="true"></i> infocakebakery.com</a>
-
+        <a href="tell:+962777077970"><i class="fa fa-phone" aria-hidden="true"></i>0777077970</a>
+        <a href="mainto:infocakebakery.com">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i> info&#64;cakebakery.com
+        </a>
       </div>
 
       <div class="float-right">
@@ -38,6 +39,28 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
+            <li class="dropdown submenu active">
+              <a class="dropdown-toggle" data-toggle="dropdown" routerLink="home" role="button" aria-haspopup="true" aria-expanded="false">Home</a>
+              <!--<ul class="dropdown-menu">
+      <li><a href="index.html">Home 1</a></li>
+      <li><a href="index-2.html">Home 2</a></li>
+      <li><a href="index-3.html">Home 3</a></li>
+      <li><a href="index-4.html">Home 4</a></li>
+      <li><a href="index-5.html">Home 5</a></li>
+    </ul>-->
+            </li>
+            <li><a href="cake.html">Our Cakes</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a routerLink="/contactus">Contact Us</a></li>
+
+            <li class="dropdown submenu">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About Us</a>
+              <ul class="dropdown-menu">
+                <li><a routerLink="/aboutAs">About Us</a></li>
+                <li><a routerLink="/ourTeam">Our Teams</a></li>
+                <li><a routerLink="/testimonials">Testimonials</a></li>
+              </ul>
+            </li>
             <li class="nav-item"><a class="nav-link" routerLink="/">Home</a></li>
             <li class="nav-item"><a class="nav-link" routerLink="/category">Our Cakes</a></li>
             <li class="nav-item"><a class="nav-link" routerLink="/About">About Us</a></li>
@@ -49,6 +72,44 @@
             <li *ngIf="!isLoggedIn" class="nav-item"><a class="nav-link" routerLink="/Home/Register">Register</a></li>
             <li *ngIf="isLoggedIn && userName" class="nav-item"><a class="nav-link" routerLink="/Home/Profile">Profile</a></li>
             <li *ngIf="isLoggedIn" class="nav-item"><a class="nav-link" (click)="logout()">Logout</a></li>
+          </ul>
+          <ul class="navbar-nav justify-content-end">
+            <li class="dropdown submenu">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Pages</a>
+              <ul class="dropdown-menu">
+                <li><a href="service.html">Services</a></li>
+                <li class="dropdown submenu">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gallery</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="portfolio.html">-  Gallery Classic</a></li>
+                    <li><a href="portfolio-full-width.html">-  Gallery Full width</a></li>
+                  </ul>
+                </li>
+                <li><a href="faq.html">Faq</a></li>
+                <li><a href="what-we-make.html">What we make</a></li>
+                <li><a href="special.html">Special Recipe</a></li>
+                <li><a href="404.html">404 page</a></li>
+                <li><a href="comming-soon.html">Coming Soon page</a></li>
+              </ul>
+            </li>
+            <li class="dropdown submenu">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+              <ul class="dropdown-menu">
+                <li><a href="blog.html">Blog with sidebar</a></li>
+                <li><a href="blog-2column.html">Blog 2 column</a></li>
+                <li><a href="single-blog.html">Blog details</a></li>
+              </ul>
+            </li>
+            <li class="dropdown submenu">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <ul class="dropdown-menu">
+                <li><a href="shop.html">Main shop</a></li>
+                <li><a href="product-details.html">Product Details</a></li>
+                <li><a href="cart.html">Cart Page</a></li>
+                <li><a href="checkout.html">Checkout Page</a></li>
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
       </nav>

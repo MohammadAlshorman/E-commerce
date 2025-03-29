@@ -2,6 +2,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './Omar/landing-page/landing-page.component';
@@ -28,6 +30,9 @@ import { ProductsComponent } from './Suleiman/products/products.component';
 import { DashboardComponent } from './Ahmad/admin-dashboard/admin-dashboard.component';
 import { CartComponent } from './Suleiman/cart/cart.component';
 import { CheckoutComponent } from './Suleiman/checkout/checkout.component';
+import { AboutAsComponent } from './Mohammad/about-as/about-as.component';
+import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
+import { ContactusComponent } from './Mohammad/contactus/contactus.component';
 
 
 
@@ -67,10 +72,17 @@ import { CheckoutComponent } from './Suleiman/checkout/checkout.component';
     CartComponent,
                 CheckoutComponent,
    
+    FooterComponent,
+    AboutAsComponent,
+    OurTeamComponent,
+    ContactusComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
-    AppRoutingModule, FormsModule
+    BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
