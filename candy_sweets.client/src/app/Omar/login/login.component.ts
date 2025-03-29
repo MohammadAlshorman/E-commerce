@@ -77,7 +77,13 @@ export class LoginComponent {
             confirmButtonColor: '#FF69B4'
           }).then(() => {
             this.user_api.login(user.ID, user.name);
-            this._route.navigate(['/']);
+            // Role-based Navigation
+            if (user.role.toLowerCase() === 'admin') {
+              this._route.navigate(['/admin-dashboard']);  // Redirect Admins
+            } else {
+              this._route.navigate(['/']);  // Redirect Users to Home
+            }
+       
           });
         } else {
           Swal.fire({
