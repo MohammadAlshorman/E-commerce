@@ -79,7 +79,7 @@ export class LoginComponent {
             this.user_api.login(user.ID, user.name);
             // Role-based Navigation
             if (user.role.toLowerCase() === 'admin') {
-              this._route.navigate(['/dashboard']);  // Redirect Admins
+              this._route.navigate(['/admin-dashboard']);  // Redirect Admins
             } else {
               this._route.navigate(['/']);  // Redirect Users to Home
             }
