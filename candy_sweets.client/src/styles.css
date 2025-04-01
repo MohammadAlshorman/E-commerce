@@ -1,1 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
+/* تنسيق الـ div الذي يحتوي على أداة Google Translate */
+#google_translate_element {
+  position: fixed; /* تحديد العنصر كطبقة ثابتة */
+  right: 660px; /* المسافة من الجهة اليمنى */
+  z-index: 9999; /* تأكد من أن العنصر فوق باقي العناصر */
+  width: 250px; /* عرض العنصر */
+  padding: 10px;
+  border-radius: 8px; /* حواف دائرية */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  top:0;
+}
+
+/* تنسيق أداة Google Translate بداخل الـ div */
+.goog-logo-link {
+  display: none !important; /* إخفاء الشعار إذا أردت */
+}
+
+/* تنسيق العنصر الخاص بالقائمة المنسدلة */
+.goog-te-combo {
+  width: 100%; /* عرض العنصر ليتناسب مع الحاوية */
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+  /* تأثير عند التمرير فوق القائمة المنسدلة */
+  .goog-te-combo:hover {
+    background-color: #f1f1f1; /* تغيير الخلفية عند التمرير */
+  }
+
+  /* إذا كنت ترغب في إضافة ألوان محددة للقائمة المنسدلة */
+  .goog-te-combo option {
+    color: #333;
+    background-color: #fff;
+  }
+
+  /* عند تغيير اللغة من القائمة */
+  .goog-te-combo:focus {
+    outline: none;
+    border-color: #f195b2; /* تغيير لون الحد عند التركيز */
+    box-shadow: 0 0 5px rgba(241, 149, 178, 0.7); /* إضافة تأثير الظل عند التركيز */
+  }
