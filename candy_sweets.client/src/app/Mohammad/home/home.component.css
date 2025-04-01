@@ -1,0 +1,40 @@
+.slogan {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white; /* اللون الأبيض للنص */
+  text-align: center;
+/*  padding: 20px;
+*/  border-radius: 8px;
+  width: fit-content;
+  margin: 0 auto;
+  animation: dynamicTextEffect 3s infinite; /* تطبيق التأثير الديناميكي */
+}
+
+@keyframes dynamicTextEffect {
+  0% {
+    transform: scale(1);
+    color: white;
+  }
+
+  25% {
+    transform: scale(1.1);
+    color: white; /* تغيير اللون عند التغيير */
+  }
+
+  50% {
+    transform: scale(1);
+    color: white;
+  }
+
+  75% {
+    transform: scale(1.1);
+    color: white;
+  }
+
+  100% {
+    transform: scale(1);
+    color: white;
+  }
+}
+
+

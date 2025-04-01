@@ -74,7 +74,9 @@ import { ContactusComponent } from './Mohammad/contactus/contactus.component';
     FooterComponent,
     AboutAsComponent,
     OurTeamComponent,
-    ContactusComponent
+    ContactusComponent,
+        
+
   ],
   imports: [
     BrowserModule,

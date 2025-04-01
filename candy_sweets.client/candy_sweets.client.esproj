@@ -13,6 +13,7 @@
     <Folder Include="src\app\Abdallah\" />
     <Folder Include="src\app\Ahmad\" />
     <Folder Include="src\app\Mohammad\service\" />
+    <Folder Include="src\app\service\" />
     <Folder Include="src\app\Omar\" />
     <Folder Include="src\app\Omar\Service_User_API\" />
     <Folder Include="src\app\Suhaib\" />

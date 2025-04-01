@@ -1,0 +1,53 @@
+/* تنسيق عام للقائمة */
+ul {
+  list-style-type: none; /* إزالة النقاط الافتراضية */
+  padding: 0;
+  margin: 0;
+  font-family: 'Arial', sans-serif; /* اختيار خط مريح */
+}
+
+/* تنسيق العناصر داخل القائمة */
+li {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-left: 30px; /* إضافة مسافة من اليسار */
+  position: relative; /* لتحديد مكان النقاط */
+  color: #333; /* لون النص */
+  transition: all 0.3s ease-in-out; /* إضافة تأثير الانتقال */
+}
+
+  /* تخصيص النقاط التي تظهر قبل النص */
+  li::before {
+    content: "\2022"; /* إضافة النقاط */
+    font-size: 30px; /* حجم النقطة */
+    color: #f39c12; /* لون النقطة */
+    position: absolute;
+    left: 0; /* ضبط النقطة على اليسار */
+    top: 50%;
+    transform: translateY(-50%); /* محاذاة النقطة بشكل عمودي */
+  }
+
+/* تنسيق النص الغامق */
+strong {
+  font-weight: bold;
+  color: #34495e; /* لون غامق للنص */
+}
+
+/* تأثير عند المرور على العناصر */
+li:hover {
+  background-color: #f0f0f0; /* تغيير الخلفية عند المرور */
+  padding-left: 35px; /* زيادة المسافة من اليسار */
+  border-left: 5px solid #f39c12; /* إضافة خط جانبي */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* إضافة ظل خفيف */
+}
+
+  /* تأثير النص عند المرور */
+  li:hover strong {
+    color: #e67e22; /* تغيير لون النص الغامق عند المرور */
+  }
+
+
+
+
+

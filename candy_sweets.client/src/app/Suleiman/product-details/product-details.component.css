@@ -143,7 +143,7 @@ button {
 }
 
   button:hover {
-    background-color: #218838;
+    background-color: #94c9d9;
   }
 
 .hidden {
@@ -297,9 +297,9 @@ button {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  background: #183153;
+  background: #f195b2;
   font-family: "Montserrat", sans-serif;
-  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 6px 24px 0px #f195b2;
   overflow: hidden;
   cursor: pointer;
   border: none;
@@ -309,7 +309,7 @@ button {
     content: " ";
     width: 0%;
     height: 100%;
-    background: #ffd401;
+    background: #f195b2;
     position: absolute;
     transition: all 0.4s ease-in-out;
     right: 0;
@@ -335,7 +335,7 @@ button {
   }
 
   .btnrev:hover span {
-    color: #183153;
+    color: #fff;
     animation: scaleUp 0.3s ease-in-out;
   }
 
@@ -352,3 +352,8 @@ button {
     transform: scale(1);
   }
 }
+
+* {
+  text-decoration: none;
+}
+

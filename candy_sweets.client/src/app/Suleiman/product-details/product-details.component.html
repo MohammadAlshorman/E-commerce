@@ -1,10 +1,24 @@
  <!--================Product Details Area =================-->
+<br />
+<br />
+<br />
+<section class="banner_area">
+  <div class="container">
+    <div class="banner_text">
+      <h3>Product Details</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product-details.html">Product Details</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
 <section class="product_details_area p_100">
   <div class="container">
     <form #addtocart="ngForm" (ngSubmit)="addToCart(addtocart.value)">
       <div class="row product_d_price">
         <div class="col-lg-6">
-          <div class="product_img"><img  class="img-fluid" src="{{prodata.imageUrl}}" alt=""></div>
+          <div class="product_img"><img class="img-fluid" src="{{prodata.imageUrl}}" alt="" style="width: 300px; height: 300px;"></div>
         </div>
         <div class="col-lg-6">
           <div class="product_details_text">
@@ -30,7 +44,7 @@
     <div class="product_tab_area">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Review (9)</a>
+          <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Review</a>
 
         </div>
       </nav>
@@ -46,16 +60,17 @@
             </div>
 
             <div class="infos">
-              <p class="date-time">
+              <!--<p class="date-time">
                 {{i.createdAt}}
-              </p>
+              </p>-->
               <p class="description">
                 {{i.description}}
               </p>
             </div>
 
             <div class="author">
-              — {{i.name}},,{{(i.rate % 6)}}
+              — {{i.name}}
+              <!--,,{{(i.rate % 6)}}-->
             </div>
           </div>
 
@@ -65,11 +80,18 @@
       </div>
 
 
+
+
+
+      <br />
+      <br />
+
+
       <div class="form-container">
         <h2>Submit Your Review</h2>
         <form id="ratingForm" #addReview="ngForm" (ngSubmit)="addRatingForProduct(addReview.value)">
 
-          <input type="hidden"  name="productId" [(ngModel)]="prodata.id" />
+          <input type="hidden" name="productId" [(ngModel)]="prodata.id" />
 
           <label for="name">Name:</label>
           <input id="name" type="text" name="name" ngModel required>
@@ -117,18 +139,40 @@
           <textarea id="description" name="description" ngModel required></textarea>
 
           <button type="submit" class="btnrev">
-            <span>Review</span>
+            <span id="Review">Review</span>
           </button>
         </form>
 
-        
+
       </div>
+
+
+
+
+
 
     </div>
   </div>
 
 
+
+
+
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -144,7 +188,7 @@
       <div class="col-lg-3 col-md-4 col-6" *ngFor="let i of getRandomFourItems()">
         <div class="cake_feature_item">
           <div class="cake_img">
-            <img style="width:100%;" src="{{i.imageUrl}}" alt="">
+            <img src="{{i.imageUrl}}" style="width: 300px; height: 300px;" alt="">
           </div>
           <div class="cake_text">
             <h4>${{i.price}}</h4>
@@ -153,7 +197,6 @@
           </div>
         </div>
       </div>
-      
     </div>
   </div>
 </section>

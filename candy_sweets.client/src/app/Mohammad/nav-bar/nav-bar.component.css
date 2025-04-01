@@ -1,0 +1,14 @@
+* {
+  text-decoration: none;
+}
+.main_header_area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000; /* Ensures the header stays above other content */
+}
+
+body {
+  padding-top: 100px; /* Add space at the top so the fixed header doesn't overlap content */
+}

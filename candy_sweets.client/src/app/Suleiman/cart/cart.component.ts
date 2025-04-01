@@ -57,10 +57,10 @@ export class CartComponent {
       if (this.VoucherData.length > 0) {
         this.discountValue = this.VoucherData[0].discount; // استخراج قيمة الخصم
         console.log("الخصم المطبق:", this.discountValue);
-        alert("تم تطبيق الخصم: " + this.discountValue);
+        alert("Discount applied: " + this.discountValue);
       } else {
         this.discountValue = 0; // إعادة التعيين إذا لم يكن هناك خصم
-        alert("كود الخصم غير صالح");
+        alert("Invalid discount code");
       }
     })
   }
