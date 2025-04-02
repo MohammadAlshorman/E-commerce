@@ -18,7 +18,7 @@ export class ManageCategoriesComponent {
   showDeleteModal: boolean = false;
   categoryToDeleteId: string = '';
 
-  categoryFormData = { name: '' };
+  categoryFormData = { name: '', image: '' }; // تعديل لتخزين URL للصورة
 
   constructor(private ser: AbdService, private _active: ActivatedRoute) { }
 
@@ -47,7 +47,13 @@ export class ManageCategoriesComponent {
       return;
     }
 
-    this.ser.addCategory(this.categoryFormData).subscribe(() => {
+    // إرسال البيانات بما فيها URL الصورة
+    const formData = {
+      name: this.categoryFormData.name,
+      image: this.categoryFormData.image // إرسال URL الصورة
+    };
+
+    this.ser.addCategory(formData).subscribe(() => {
       this.showAlert('Category Added Successfully', 'success');
       this.getData();
       this.closeCategoryModal();
@@ -58,7 +64,7 @@ export class ManageCategoriesComponent {
   editCategory(category: any) {
     this.isEditMode = true;
     this.editCategoryId = category.id;
-    this.categoryFormData = { name: category.name };
+    this.categoryFormData = { name: category.name, image: category.image }; // استيراد URL الصورة
     this.showCategoryModal = true;
   }
 
@@ -68,7 +74,12 @@ export class ManageCategoriesComponent {
       return;
     }
 
-    this.ser.editCategory(this.editCategoryId, this.categoryFormData).subscribe(() => {
+    const formData = {
+      name: this.categoryFormData.name,
+      image: this.categoryFormData.image // إرسال URL الصورة
+    };
+
+    this.ser.editCategory(this.editCategoryId, formData).subscribe(() => {
       this.showAlert('Category Updated Successfully', 'success');
       this.getData();
       this.closeCategoryModal();
@@ -108,7 +119,7 @@ export class ManageCategoriesComponent {
   }
 
   resetForm() {
-    this.categoryFormData = { name: '' };
+    this.categoryFormData = { name: '', image: '' }; // إعادة تعيين الحقول
     this.isEditMode = false;
     this.editCategoryId = '';
   }

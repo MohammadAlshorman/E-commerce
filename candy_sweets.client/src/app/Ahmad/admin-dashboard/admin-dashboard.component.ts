@@ -39,7 +39,7 @@ export class DashboardComponent implements OnInit {
         this.salesData = data;
         this.totalSales = this.salesData.reduce((sum, sale) => sum + sale.amount, 0);
       },
-      error => this.showAlert('Error loading sales data!', 'error')
+    //  error => this.showAlert('Error loading sales data!', 'error')
     );
   }
 
@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit {
         this.usersData = data;
         this.totalUsers = this.usersData.length;
       },
-      error => this.showAlert('Error loading users data!', 'error')
+    //  error => this.showAlert('Error loading users data!', 'error')
     );
   }
 
@@ -59,7 +59,7 @@ export class DashboardComponent implements OnInit {
         this.ordersData = data;
         this.totalOrders = this.ordersData.length;
       },
-      error => this.showAlert('Error loading orders data!', 'error')
+    //  error => this.showAlert('Error loading orders data!', 'error')
     );
   }
 
@@ -69,7 +69,7 @@ export class DashboardComponent implements OnInit {
         this.categoriesData = data;
         this.totalCategories = this.categoriesData.length;
       },
-      error => this.showAlert('Error loading categories data!', 'error')
+    //  error => this.showAlert('Error loading categories data!', 'error')
     );
   }
 
@@ -79,7 +79,7 @@ export class DashboardComponent implements OnInit {
         this.productsData = data;
         this.totalProducts = this.productsData.length;
       },
-      error => this.showAlert('Error loading products data!', 'error')
+    //  error => this.showAlert('Error loading products data!', 'error')
     );
   }
 

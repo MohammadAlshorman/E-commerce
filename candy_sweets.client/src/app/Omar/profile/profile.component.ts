@@ -22,7 +22,7 @@ export class ProfileComponent {
           this.user = data.find((u: any) => u.ID === userId);
         });
       } else {
-        alert('No user is logged in!');
+        //alert('No user is logged in!');
         this.router.navigate(['login']); // Redirect to login if no user is logged in
       }
     });

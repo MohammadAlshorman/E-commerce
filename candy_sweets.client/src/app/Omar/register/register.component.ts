@@ -124,7 +124,7 @@ export class RegisterComponent {
       password: this.passwordInput,
       address: this.addressInput,
       phone: this.phoneInput,
-      image: 'https://th.bing.com/th/id/OIP.iTB9Mey53IOcod1S0kIqkQHaEn?w=250&h=180&c=7&r=0&o=5&pid=1.7',
+      image: 'https://cdn-icons-png.flaticon.com/512/219/219983.png',
       Gender: this.genderInput,
       BirthDate: 'waiting',
       paymentMethods: 'waiting',

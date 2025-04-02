@@ -20,9 +20,11 @@ export class GetUsersComponent {
   getData() {
     this.ser.getUsers().subscribe((data) => {
       this.Users = data;
-    }, (error) => {
-      this.showAlert('Error loading users!', 'error');
-    });
+    },
+    //  (error) => {
+    //  this.showAlert('Error loading users!', 'error');
+      //}
+    );
   }
 
   deleteUsers(id: any) {
@@ -39,9 +41,11 @@ export class GetUsersComponent {
         this.ser.deleteUser(id).subscribe(() => {
           this.showAlert('User Deleted Successfully!', 'success');
           this.getData();
-        }, (error) => {
-          this.showAlert('Error deleting user!', 'error');
-        });
+        },
+          //(error) => {
+          //this.showAlert('Error deleting user!', 'error');
+          //}
+        );
       }
     });
   }

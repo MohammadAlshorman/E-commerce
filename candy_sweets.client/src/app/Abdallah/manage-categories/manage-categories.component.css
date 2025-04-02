@@ -48,3 +48,14 @@ body {
   background-color: #6c757d;
   color: white;
 }
+
+
+/* التأثير عند ظهور التنبيه */
+.swal2-popup {
+  opacity: 0; /* جعل العنصر غير مرئي عند بداية ظهوره */
+  transition: opacity 0.3s ease-in-out; /* تأثير الانتقال عند التلاشي */
+}
+
+  .swal2-popup.swal2-show {
+    opacity: 1; /* عندما يكون العنصر مرئيًا بعد تطبيق التلاشي */
+  }
