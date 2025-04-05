@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';  // تأكد من أن Router و NavigationEnd مستوردين بشكل صحيح
+import { filter } from 'rxjs';  // تأكد من استيراد filter من rxjs
 
 interface WeatherForecast {
   date: string;
@@ -12,14 +14,29 @@ interface WeatherForecast {
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']  // تأكد من أن styleUrl هو styleUrls
 })
 export class AppComponent implements OnInit {
   public forecasts: WeatherForecast[] = [];
+  showFooter: boolean = true;  // افتراضيًا إظهار الفوتر
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) { }  // حقن Router في الـ constructor
 
-  ngOnInit() {
+  ngOnInit(): void {
+    // اشتراك في أحداث التوجيه
+    this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)  // التأكد من أنه حدث NavigationEnd
+    ).subscribe((event: NavigationEnd) => {
+      // يمكنك تحديد منطق إخفاء الفوتر بناءً على المسار
+      if (event.urlAfterRedirects === '/Home/Profile' || event.urlAfterRedirects === '/Home/EditProfile' || event.urlAfterRedirects === '/Home/Reset' || event.urlAfterRedirects ==='/Home/User_History')
+      {
+        this.showFooter = false;  // إخفاء الفوتر في صفحة تعديل الملف الشخصي
+      } else {
+        this.showFooter = true;   // إظهار الفوتر في باقي الصفحات
+      }
+    });
+
+    // إذا كنت تستخدم getForecasts، تأكد من أنك تقوم باستدعاء الدالة
     this.getForecasts();
   }
 

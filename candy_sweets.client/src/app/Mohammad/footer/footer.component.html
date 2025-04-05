@@ -1,5 +1,5 @@
 
-<section class="newsletter_area">
+<section class="newsletter_area" *ngIf="showFooter">
   <div class="container">
     <div class="row newsletter_inner">
       <div class="col-lg-6">
@@ -27,7 +27,7 @@
 
 
 
-<footer class="footer_area">
+<footer class="footer_area" *ngIf="showFooter">
   <div class="footer_widgets">
     <div class="container">
       <div class="row footer_wd_inner">

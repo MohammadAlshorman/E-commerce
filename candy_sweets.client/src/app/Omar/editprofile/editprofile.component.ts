@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 export class EditprofileComponent implements OnInit {
   user: any = {}; // Object to hold user data
   userId: any | null = null; // Logged-in user's ID
-
+  showFooter: boolean = false;  // المتغير الذي يتحكم في إظهار الفوتر
   constructor(
     private user_api: CustomerLoginRegistrationService,
     private router: Router,
