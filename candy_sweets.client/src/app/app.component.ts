@@ -36,7 +36,6 @@ export class AppComponent implements OnInit {
       }
     });
 
-    // إذا كنت تستخدم getForecasts، تأكد من أنك تقوم باستدعاء الدالة
     this.getForecasts();
   }
 

@@ -91,3 +91,16 @@
     width: 100%;
   }
 }
+
+
+.profile-image {
+  width: 200px; /* عرض ثابت للصورة */
+  height: 200px; /* طول ثابت للصورة */
+  border-radius: 50%; /* لجعل الصورة دائرية */
+  object-fit: cover; /* لضمان ملاءمة الصورة ضمن المساحة المحددة */
+  display: flex;
+  justify-content: center; /* توسيط المحتوى أفقيًا */
+  align-items: center; /* توسيط المحتوى عموديًا */
+  margin: 0 auto; /* توسيط الصورة داخل العنصر */
+  border: 2px solid #FF69B4; /* إضافة إطار وردي حول الصورة */ 
+}
