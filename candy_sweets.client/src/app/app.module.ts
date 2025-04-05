@@ -33,6 +33,7 @@ import { AboutAsComponent } from './Mohammad/about-as/about-as.component';
 import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
 import { ContactusComponent } from './Mohammad/contactus/contactus.component';
 import { LoginGoogleComponent } from './login-google/login-google.component';
+import { OrderHistoryComponent } from './Omar/order-history/order-history.component';
 
 
 
@@ -77,6 +78,7 @@ import { LoginGoogleComponent } from './login-google/login-google.component';
     OurTeamComponent,
     ContactusComponent,
     LoginGoogleComponent,
+    OrderHistoryComponent,
         
 
   ],

@@ -1,0 +1,17 @@
+<!--<div *ngIf="userOrders.length > 0; else noOrders">
+  <h2>Your Order History</h2>-->
+  <ul>
+    <li *ngFor="let order of userOrders">
+      <strong>Order ID:</strong> {{ order.id }} <br />
+      <strong>Product:</strong> {{ order.userID }} <br />
+      <strong>Payment Method:</strong> {{ order.paymentMethodID }} <br />
+      <strong>Amount:</strong> {{ order.totalAmount }} <br />
+      <strong>Date:</strong> {{ order.createAt }} <br />
+      <hr />
+    </li>
+  </ul>
+<!--</div>
+
+<ng-template #noOrders>
+  <p>You have no orders yet.</p>
+</ng-template>-->

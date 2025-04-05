@@ -43,7 +43,9 @@ export class CustomerLoginRegistrationService {
   Update_User(id: any, data: any): Observable<any> {
     return this.http.put<any>(`${this.User_API_URL}/${id}`, data);
   }
-
+  Get_Histroy(): Observable<any> {
+    return this.http.get<any>("https://67d760e89d5e3a10152ab1ca.mockapi.io/v1/Odrer");
+  }
   login(userId: string, userName: string): void {
     this.isLoggedInSubject.next(true);
     this.setUserId(userId);
