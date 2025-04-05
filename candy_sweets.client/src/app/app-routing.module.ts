@@ -24,6 +24,7 @@ import { AboutAsComponent } from './Mohammad/about-as/about-as.component';
 import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
 import { TestimonialsComponent } from './Mohammad/testimonials/testimonials.component';
 import { ContactusComponent } from './Mohammad/contactus/contactus.component';
+import { OrderHistoryComponent } from './Omar/order-history/order-history.component';
 
 
 
@@ -61,7 +62,8 @@ const routes: Routes = [
         { path: 'EditProfile', component: EditprofileComponent },
         { path: 'Forget', component: ForgetpasswordComponent },
         { path: 'LastStep', component: LaststageforgetpasswordComponent },
-        { path: 'Reset', component: ResetpasswordComponent }
+        { path: 'Reset', component: ResetpasswordComponent },
+        { path: 'User_History', component: OrderHistoryComponent  }
     ]
   },
   {
