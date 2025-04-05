@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
       filter(event => event instanceof NavigationEnd)  // التأكد من أنه حدث NavigationEnd
     ).subscribe((event: NavigationEnd) => {
       // يمكنك تحديد منطق إخفاء الفوتر بناءً على المسار
-      if (event.urlAfterRedirects === '/Home/Profile' || event.urlAfterRedirects === '/Home/EditProfile' || event.urlAfterRedirects === '/Home/Reset' || event.urlAfterRedirects ==='/Home/User_History')
+      if (event.urlAfterRedirects === '/Home/Profile' || event.urlAfterRedirects === '/Home/EditProfile' || event.urlAfterRedirects === '/Home/Reset' || event.urlAfterRedirects === '/Home/User_History' || event.urlAfterRedirects ==='/admin-dashboard')
       {
         this.showFooter = false;  // إخفاء الفوتر في صفحة تعديل الملف الشخصي
       } else {

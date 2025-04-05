@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { CustomerLoginRegistrationService } from '../Service_User_API/customer-login-registration.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-register',
@@ -105,8 +107,12 @@ export class RegisterComponent {
     this.validatePassword();
 
     if (this.formHasErrors()) {
-      alert('Please correct the errors before submitting.');
-      return;
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Please correct the errors before submitting.',
+        confirmButtonColor: '#FF69B4'
+      });      return;
     }
 
     // Check if the email already exists
@@ -124,7 +130,7 @@ export class RegisterComponent {
       password: this.passwordInput,
       address: this.addressInput,
       phone: this.phoneInput,
-      image: 'https://g.top4top.io/p_3382gmjl41.png',
+      image: 'https://k.top4top.io/p_3382wl2bp1.png',
       Gender: this.genderInput,
       BirthDate: 'waiting',
       paymentMethods: 'waiting',
@@ -132,7 +138,13 @@ export class RegisterComponent {
     };
 
     this.user_api.Post_User_Register(newUser).subscribe(() => {
-      alert('User registered successfully!');
+      Swal.fire({
+        icon: 'success',
+        title: 'Registered successfully',
+        html: `User <span style="color: #f195b2;">${this.nameInput}</span> registered successfully!`,
+        confirmButtonColor: '#FF69B4',
+
+      });
       this._route.navigate(['/Home/Login']);
     });
   }
