@@ -32,6 +32,7 @@ import { CheckoutComponent } from './Suleiman/checkout/checkout.component';
 import { AboutAsComponent } from './Mohammad/about-as/about-as.component';
 import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
 import { ContactusComponent } from './Mohammad/contactus/contactus.component';
+import { LoginGoogleComponent } from './login-google/login-google.component';
 
 
 
@@ -75,6 +76,7 @@ import { ContactusComponent } from './Mohammad/contactus/contactus.component';
     AboutAsComponent,
     OurTeamComponent,
     ContactusComponent,
+    LoginGoogleComponent,
         
 
   ],
