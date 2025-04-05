@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: "contactus", component: ContactusComponent }  ,
 
 
-
+  
 
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductsComponent },
