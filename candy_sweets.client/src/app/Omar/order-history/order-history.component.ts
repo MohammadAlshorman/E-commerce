@@ -19,7 +19,8 @@ export class OrderHistoryComponent {
       if (id) {
         this.userService.Get_Histroy().subscribe((orders) => {
           // Filter orders where userId matches the logged-in user
-          this.userOrders = orders.filter((order: any) => order.userID == id);
+          this.userOrders = orders.filter((order: any) => order.userID == id)
+                                  .sort((a: any, b: any) => new Date(b.createAt).getTime() - new Date(a.createAt).getTime());
         });
       }
     });

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.Profile_container {
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: linear-gradient(135deg, #f195b2, #303339);
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 10px;
+  color: #FF1493;
+  position: relative;
+}
+
+  .title::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    height: 3px;
+    width: 30px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #f195b2, #303339);
+  }
+
+.order-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+  .order-table th,
+  .order-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+  }
+
+  .order-table th {
+    background-color: #f195b2;
+    color: white;
+  }
+
+  .order-table tr:hover {
+    background-color: #f9f9f9;
+  }
+
+.button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pink-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f195b2, #303339);
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  line-height: 45px;
+}
+
+  .pink-button:hover {
+    background: linear-gradient(-135deg, #f195b2, #303339);
+  }
