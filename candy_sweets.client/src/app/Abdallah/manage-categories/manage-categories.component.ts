@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { AbdService } from './Service/abd.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
 
 @Component({
   selector: 'app-manage-categories',
@@ -20,7 +21,7 @@ export class ManageCategoriesComponent {
 
   categoryFormData = { name: '', image: '' }; // تعديل لتخزين URL للصورة
 
-  constructor(private ser: AbdService, private _active: ActivatedRoute) { }
+  constructor(private ser: AbdService, private _active: ActivatedRoute, private router: Router, private authService: CustomerLoginRegistrationService) { }
 
   ngOnInit() {
     this.getData();
@@ -130,6 +131,31 @@ export class ManageCategoriesComponent {
       title: type === 'success' ? 'Success!' : 'Error!',
       text: message,
       confirmButtonColor: '#FF69B4'
+    });
+  }
+
+
+  logout() {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You will be logged out from the dashboard!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, Logout!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.authService.logout();
+        Swal.fire({
+          icon: 'success',
+          title: 'Logged Out Successfully!',
+          text: 'You have been logged out.',
+          confirmButtonColor: '#FF69B4'
+        }).then(() => {
+          this.router.navigate(['/']);
+        });
+      }
     });
   }
 }

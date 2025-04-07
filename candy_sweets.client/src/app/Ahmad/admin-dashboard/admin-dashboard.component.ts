@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DashboardService } from './dashboard-service.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { CustomerLoginRegistrationService } from '../../Omar/Service_User_API/customer-login-registration.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -23,7 +24,7 @@ export class DashboardComponent implements OnInit {
   categoriesData: any[] = [];
   productsData: any[] = [];
 
-  constructor(private dashboardService: DashboardService, private router: Router) { }
+  constructor(private dashboardService: DashboardService, private router: Router, private authService: CustomerLoginRegistrationService) { }
 
   ngOnInit() {
     this.loadSalesData();
@@ -37,9 +38,14 @@ export class DashboardComponent implements OnInit {
     this.dashboardService.getSalesData().subscribe(
       data => {
         this.salesData = data;
-        this.totalSales = this.salesData.reduce((sum, sale) => sum + sale.amount, 0);
+
+        // نستخدم totalAmount بدلاً من amount + نحوله لرقم
+        this.totalSales = this.salesData.reduce((sum, sale) => {
+          const amount = parseFloat(sale.totalAmount); // تأكد من تحويله لرقم
+          return sum + (isNaN(amount) ? 0 : amount); // تجنب NaN
+        }, 0);
       },
-    //  error => this.showAlert('Error loading sales data!', 'error')
+      error => this.showAlert('Error loading sales data!', 'error')
     );
   }
 
@@ -83,29 +89,37 @@ export class DashboardComponent implements OnInit {
     );
   }
 
-  logout() {
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You will be logged out from the dashboard!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Logout!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        localStorage.clear();
-        Swal.fire({
-          icon: 'success',
-          title: 'Logged Out Successfully!',
-          text: 'You have been logged out.',
-          confirmButtonColor: '#FF69B4'
-        }).then(() => {
-          this.router.navigate(['/']);
+ logout() {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You will be logged out from the dashboard!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, Logout!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+
+      // 🧹 استدعاء دالة تسجيل الخروج من الخدمة
+      this.authService.logout();
+
+      // ✅ عرض تأكيد
+      Swal.fire({
+        icon: 'success',
+        title: 'Logged Out Successfully!',
+        text: 'You have been logged out.',
+        confirmButtonColor: '#FF69B4'
+      }).then(() => {
+        // 🔁 إعادة التوجيه + تحديث الصفحة لضمان تفريغ كل شيء
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          location.reload();
         });
-      }
-    });
-  }
+      });
+    }
+  });
+}
+
 
   showAlert(message: string, type: string) {
     Swal.fire({

@@ -39,6 +39,10 @@ export class AppComponent implements OnInit {
         || event.urlAfterRedirects === '/manage-product'
         || event.urlAfterRedirects === '/getcategories'
         || event.urlAfterRedirects === '/getusers'
+          || event.urlAfterRedirects === '/app-order'
+          || event.urlAfterRedirects === '/app-add-voucher'
+          || event.urlAfterRedirects === '/wheel'
+      
 
 
       )

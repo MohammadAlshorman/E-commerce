@@ -1,0 +1,41 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar Styling */
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: black; /* ← خلفية سوداء */
+  z-index: 999;
+}
+
+/* Main Content */
+#main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+/* Sidebar Links */
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  background-color: transparent;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+  .sidebar-link:hover {
+    background-color: #1a1a1a; /* ← لون غامق بدل الزهري */
+    color: white;
+  }
+
+

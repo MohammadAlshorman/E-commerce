@@ -1,40 +1,28 @@
-.slogan {
-  font-size: 2rem;
-  font-weight: bold;
-  color: white; /* اللون الأبيض للنص */
-  text-align: center;
-/*  padding: 20px;
-*/  border-radius: 8px;
-  width: fit-content;
-  margin: 0 auto;
-  animation: dynamicTextEffect 3s infinite; /* تطبيق التأثير الديناميكي */
+.wheel-popup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
 }
 
-@keyframes dynamicTextEffect {
-  0% {
-    transform: scale(1);
-    color: white;
-  }
-
-  25% {
-    transform: scale(1.1);
-    color: white; /* تغيير اللون عند التغيير */
-  }
-
-  50% {
-    transform: scale(1);
-    color: white;
-  }
-
-  75% {
-    transform: scale(1.1);
-    color: white;
-  }
-
-  100% {
-    transform: scale(1);
-    color: white;
-  }
+.wheel-popup {
+    width: 150px;
+    height: 150px;
+    border: 8px solid #333;
+    border-radius: 50%;
+    background: conic-gradient( #f44336 0% 16.66%, #4caf50 16.66% 33.33%, #2196f3 33.33% 50%, #ff9800 50% 66.66%, #9c27b0 66.66% 83.33%, #00bcd4 83.33% 100% );
 }
 
+.spin-animation {
+    animation: spin 3s ease-out forwards;
+}
 
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1440deg); /* 4 دورات */
+    }
+}

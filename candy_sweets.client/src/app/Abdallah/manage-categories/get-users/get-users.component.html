@@ -1,56 +1,97 @@
-<div class="content container mt-5">
-  <h3 class="main-title">User List</h3>
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th scope="col">ID</th>
-        <th scope="col">Img</th>
-
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone</th>
-        <th scope="col">password</th>
-
-        <th scope="col">Role</th>
-        <th scope="col">Gender</th>
-
-
-
-
-
-
-        <th scope="col">Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of Users">
-        <td>{{user.ID}}</td>
-        <td>
-          <img [src]="user.image" alt="User Image" width="100" height="100">
-        </td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
-        <td>{{user.phone}}</td>
+<div class="d-flex">
+  <!-- Sidebar -->
+    <div id="sidebar" class="bg-dark text-white vh-100 p-3">
+        <h4 class="text-center mb-4">Admin Panel</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/admin-dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/manage-product">Manage Products</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/getcategories">Manage Categories</a>
+            </li>
+            <!--<li class="nav-item mb-2">
+          <a class="nav-link sidebar-link" routerLink="/orders">Orders</a>
+        </li>-->
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/getusers">Manage Users</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/app-add-voucher">Manage voucher</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/app-order">Manage order</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
 
 
-        <td>{{user.password}}</td>
+  <div class="content container mt-5">
+    <h3 class="main-title">User List</h3>
+    <table class="table table-bordered table-hover" style="margin-left: -95px;" >
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Img</th>
 
-        <td>{{user.role}}</td>
-        <td>{{user.Gender}}</td>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">password</th>
+
+          <th scope="col">Role</th>
+          <th scope="col">Gender</th>
 
 
 
 
-        <td>
-          <button (click)="deleteUsers(user.ID)" class="btn pink-button">Delete</button>
 
 
-        </td>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of Users">
+          <td>{{user.ID}}</td>
+          <td>
+            <img [src]="user.image" alt="User Image" width="100" height="100">
+          </td>
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+
+
+          <td>{{user.password}}</td>
+
+          <td>
+            {{user.role}}
+            <button (click)="toggleUserRole(user)" class="btn btn-warning btn-sm ms-2">
+              {{ user.role.toLowerCase() === 'admin' ? 'Make User' : 'Make Admin' }}
+            </button>
+          </td>
+
+
+          <td>{{user.Gender}}</td>
 
 
 
-      </tr>
-    </tbody>
-  </table>
+
+          <td>
+            <button (click)="deleteUsers(user.ID)" class="btn pink-button">Delete</button>
+
+
+          </td>
+
+
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-<br /><br /><br />
+  <br /><br /><br />

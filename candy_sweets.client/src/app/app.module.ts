@@ -34,6 +34,9 @@ import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
 import { ContactusComponent } from './Mohammad/contactus/contactus.component';
 import { LoginGoogleComponent } from './login-google/login-google.component';
 import { OrderHistoryComponent } from './Omar/order-history/order-history.component';
+import { AddVoucherComponent } from './Ahmad/add-voucher/add-voucher.component';
+import { OrderComponent } from './Ahmad/order/order.component';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -79,7 +82,9 @@ import { OrderHistoryComponent } from './Omar/order-history/order-history.compon
     ContactusComponent,
     LoginGoogleComponent,
     OrderHistoryComponent,
-        
+    AddVoucherComponent,
+    OrderComponent,
+
 
   ],
   imports: [
@@ -87,7 +92,8 @@ import { OrderHistoryComponent } from './Omar/order-history/order-history.compon
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+      ReactiveFormsModule,
+      CommonModule, // 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,69 @@
+﻿.wheel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.wheel {
+    width: 200px;
+    height: 200px;
+    border: 10px solid #333;
+    border-radius: 50%;
+    background: conic-gradient( #f44336 0% 16.66%, #4caf50 16.66% 33.33%, #2196f3 33.33% 50%, #ff9800 50% 66.66%, #9c27b0 66.66% 83.33%, #00bcd4 83.33% 100% );
+    animation: none;
+}
+
+    .wheel.spin {
+        animation: spin 3s ease-out;
+    }
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(1440deg); /* 4 دورات */
+    }
+}
+
+
+body {
+    background-image: url('https://media.tenor.com/uYAFdAfKa7sAAAAj/shopbackshopfest-shopback.gif'); /* 👈 غيّر المسار حسب مكان الصورة */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.bg-lollipop {
+    background-image: url('https://media.tenor.com/uYAFdAfKa7sAAAAj/shopbackshopfest-shopback.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    height: 50%;
+    width: 50%;
+}
+
+.center-gif-container {
+  height: 100vh; /* يغطي كامل الشاشة */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff5f8; /* خلفية ناعمة */
+}
+
+.center-gif-container img {
+  width: 300px; /* حجم الصورة حسب رغبتك */
+  height: auto;
+  animation: pulse 2s infinite;
+}
+
+/* أنيميشن خفيف */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}

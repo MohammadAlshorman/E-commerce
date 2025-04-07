@@ -1,0 +1,59 @@
+<div class="d-flex">
+  <!-- Sidebar -->
+  <div id="sidebar" class="text-white p-3">
+    <h4 class="text-center mb-4">Admin Panel</h4>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/admin-dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/manage-product">Manage Products</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/getcategories">Manage Categories</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/getusers">Manage Users</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/app-add-voucher">Manage voucher</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/app-order">Manage order</a>
+      </li>
+      <li class="nav-item mb-2">
+        <a class="nav-link sidebar-link" routerLink="/" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="container-fluid p-4 content-bg">
+    <h2 class="mb-4 text-center">All Orders</h2>
+    <table class="table table-bordered table-hover">
+        <thead style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">
+            <tr>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">#</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">User Name</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">Email</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">Product ID</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">Total Amount</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">Payment Method</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none; transition: transform 0.2s;">Date</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let order of combinedData; let i = index">
+                <td>{{ i + 1 }}</td>
+                <td>{{ order.userName }}</td>
+                <td>{{ order.userEmail }}</td>
+                <td>{{ order.ProductID }}</td>
+                <td>${{ order.totalAmount }}</td>
+                <td>{{ order.paymentMethod }}</td>
+                <td>{{ order.createAt | date:'short' }}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

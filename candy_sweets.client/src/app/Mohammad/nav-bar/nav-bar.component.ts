@@ -12,36 +12,38 @@ import { SuleimanserviceService } from '../../Suleiman/suleimanservice.service';
 export class NavBarComponent {
   isLoggedIn: boolean = false;
   userName: string | null = null;
-  cartItemCount: number = 0
+  userRole: string | null = null; // ✅ المتغير الخاص بالرول
+  cartItemCount: number = 0;
+
   constructor(
     private authService: CustomerLoginRegistrationService,
     private router: Router,
     private ser: SuleimanserviceService
   ) { }
+
   ngOnInit(): void {
     this.authService.isLoggedIn$.subscribe(status => {
       this.isLoggedIn = status;
-
     });
 
     this.authService.userName$.subscribe(name => {
       this.userName = name;
     });
 
-
-
+    this.authService.userRole$.subscribe(role => {
+      this.userRole = role;
+    });
 
     this.ser.cartCount$.subscribe(count => {
       this.cartItemCount = count;
-
-    })
-     
+    });
   }
+
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/Home/Login']);
   }
+}
 
-  }
 
 

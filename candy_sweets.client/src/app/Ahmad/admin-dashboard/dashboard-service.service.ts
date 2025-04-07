@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class DashboardService {
 
-  private salesUrl = 'https://67d293ba90e0670699be2925.mockapi.io/Sales';
+  private salesUrl = 'https://67d760e89d5e3a10152ab1ca.mockapi.io/v1/Odrer';
   private usersUrl = 'https://67d293ba90e0670699be2925.mockapi.io/user';
   private ordersUrl = 'https://67d760e89d5e3a10152ab1ca.mockapi.io/v1/Odrer';
   private categoriesUrl = 'https://67d293ba90e0670699be2925.mockapi.io/Categories';

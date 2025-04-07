@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +44,15 @@ export class SuleimanserviceService {
   getAllVouchers() {
     return this.http.get<any[]>('https://67e44f4e2ae442db76d3ee5f.mockapi.io/voucher');
   }
+
+
+  addOrder(orderData: any): Observable<any> {
+    return this.http.post<any>("https://67d760e89d5e3a10152ab1ca.mockapi.io/v1/Odrer", orderData);
+  }
+  getUserById(id: string) {
+    return this.http.get(`https://67d293ba90e0670699be2925.mockapi.io/user/${id}`);
+  }
+
 
   cartCount = new BehaviorSubject<number>(0); // متغير يمكن ملاحظته لحفظ عدد المنتجات
 

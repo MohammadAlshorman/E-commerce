@@ -1,0 +1,61 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar Styling */
+#sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: black;
+  color: white;
+  z-index: 1000;
+}
+
+  #sidebar h4 {
+    color: white;
+  }
+
+.sidebar-link {
+  display: block;
+  padding: 10px 15px;
+  color: white;
+  background-color: transparent;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+  .sidebar-link:hover {
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+/* Main Content Styling */
+#main-content {
+  margin-left: 250px;
+  width: calc(100% - 250px);
+}
+
+/* Content Background */
+.content-bg {
+  background-color: #F8F8F8;
+}
+
+/* Card Styling */
+.card {
+  background-color: #FFB6C1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+  .card:hover {
+    transform: scale(1.05);
+  }

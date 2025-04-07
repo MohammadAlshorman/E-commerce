@@ -1,79 +1,112 @@
-<div class="container mt-5">
-  <h2 class="main-title">Manage Categories</h2>
-  <button class="btn pink-button mb-4" (click)="openCategoryModal()">Add New Category</button>
+<div class="d-flex">
+  <!-- Sidebar -->
+    <div id="sidebar" class="bg-dark text-white vh-100 p-3">
+        <h4 class="text-center mb-4">Admin Panel</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/admin-dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/manage-product">Manage Products</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/getcategories">Manage Categories</a>
+            </li>
+            <!--<li class="nav-item mb-2">
+          <a class="nav-link sidebar-link" routerLink="/orders">Orders</a>
+        </li>-->
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/getusers">Manage Users</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/app-add-voucher">Manage voucher</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/app-order">Manage order</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
 
-  <!-- Add/Edit Category Modal -->
-  <div class="modal" [ngClass]="{'show d-block': showCategoryModal}" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">{{ isEditMode ? 'Edit Category' : 'Add Category' }}</h5>
-          <button type="button" class="btn-close" (click)="closeCategoryModal()"></button>
-        </div>
-        <div class="modal-body">
-          <form (ngSubmit)="isEditMode ? updateCategory() : addCategory()">
-            <div class="form-group mb-3">
-              <label>Category Name</label>
-              <input type="text" class="form-control" [(ngModel)]="categoryFormData.name" name="name" required>
-            </div>
+  <div class="container mt-5">
+    <h2 class="main-title">Manage Categories</h2>
+    <button class="btn pink-button mb-4" (click)="openCategoryModal()">Add New Category</button>
 
-            <div class="form-group mb-3">
-              <label>Image URL</label>
-              <input type="text" class="form-control" [(ngModel)]="categoryFormData.image" name="image">
-            </div>
+    <!-- Add/Edit Category Modal -->
+    <div class="modal" [ngClass]="{'show d-block': showCategoryModal}" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">{{ isEditMode ? 'Edit Category' : 'Add Category' }}</h5>
+            <button type="button" class="btn-close" (click)="closeCategoryModal()"></button>
+          </div>
+          <div class="modal-body">
+            <form (ngSubmit)="isEditMode ? updateCategory() : addCategory()">
+              <div class="form-group mb-3">
+                <label>Category Name</label>
+                <input type="text" class="form-control" [(ngModel)]="categoryFormData.name" name="name" required>
+              </div>
+
+              <div class="form-group mb-3">
+                <label>Image URL</label>
+                <input type="text" class="form-control" [(ngModel)]="categoryFormData.image" name="image">
+              </div>
 
 
-            <button type="submit" class="btn pink-button">{{ isEditMode ? 'Update' : 'Add' }}</button>
-            <button type="button" class="btn btn-secondary ms-2" (click)="closeCategoryModal()">Cancel</button>
-          </form>
+              <button type="submit" class="btn pink-button">{{ isEditMode ? 'Update' : 'Add' }}</button>
+              <button type="button" class="btn btn-secondary ms-2" (click)="closeCategoryModal()">Cancel</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Delete Confirmation Modal -->
-  <div class="modal" [ngClass]="{'show d-block': showDeleteModal}" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Confirm Deletion</h5>
-          <button type="button" class="btn-close" (click)="closeDeleteModal()"></button>
-        </div>
-        <div class="modal-body">
-          <p>Are you sure you want to delete this category?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" (click)="deleteCategory()">Delete</button>
-          <button type="button" class="btn btn-secondary" (click)="closeDeleteModal()">Cancel</button>
+    <!-- Delete Confirmation Modal -->
+    <div class="modal" [ngClass]="{'show d-block': showDeleteModal}" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Confirm Deletion</h5>
+            <button type="button" class="btn-close" (click)="closeDeleteModal()"></button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this category?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="deleteCategory()">Delete</button>
+            <button type="button" class="btn btn-secondary" (click)="closeDeleteModal()">Cancel</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Categories List Table -->
-  <div class="mt-5">
-    <h3>Categories List</h3>
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>image</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let category of Categorys">
-          <td>{{category.id}}</td>
-          <td>{{category.name}}</td>
-          <td><img [src]="category.image" alt="category image" width="50" height="50"></td>
-          <td>
-            <button (click)="editCategory(category)" class="btn pink-button me-2">Edit</button>
-            <button (click)="confirmDeleteCategory(category.id)" class="btn btn-danger">Delete</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- Categories List Table -->
+    <div class="mt-5">
+      <h3>Categories List</h3>
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>image</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let category of Categorys">
+            <td>{{category.id}}</td>
+            <td>{{category.name}}</td>
+            <td><img [src]="category.image" alt="category image" width="50" height="50"></td>
+            <td>
+              <button (click)="editCategory(category)" class="btn pink-button me-2">Edit</button>
+              <button (click)="confirmDeleteCategory(category.id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-<br /><br /><br />
+  <br /><br /><br />

@@ -25,7 +25,10 @@ import { OurTeamComponent } from './Mohammad/our-team/our-team.component';
 import { TestimonialsComponent } from './Mohammad/testimonials/testimonials.component';
 import { ContactusComponent } from './Mohammad/contactus/contactus.component';
 import { OrderHistoryComponent } from './Omar/order-history/order-history.component';
+import { AddVoucherComponent } from './Ahmad/add-voucher/add-voucher.component';
+import { OrderComponent } from './Ahmad/order/order.component';
 
+import { WheelComponent } from './Mohammad/wheel/wheel.component';
 
 
  
@@ -39,8 +42,7 @@ const routes: Routes = [
   { path: "testimonials", component: TestimonialsComponent },
   { path: "contactus", component: ContactusComponent }  ,
 
-
-  
+    { path: 'wheel', component: WheelComponent }, 
 
   { path: 'category', component: CategoryComponent },
   { path: 'product/:id', component: ProductsComponent },
@@ -83,6 +85,12 @@ const routes: Routes = [
   },
   {
     path: 'admin-dashboard', component: DashboardComponent
+  },
+  {
+    path: 'app-add-voucher', component: AddVoucherComponent
+  },
+  {
+    path: 'app-order', component: OrderComponent
   },
   {
     path: '', component:HomeComponent

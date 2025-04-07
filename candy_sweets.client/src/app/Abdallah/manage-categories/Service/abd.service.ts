@@ -27,7 +27,11 @@ export class AbdService {
     return this.url.delete(`https://67d293ba90e0670699be2925.mockapi.io/user/${id}`)
   }
 
-  
+  updateUser(id: any, data: any) {
+    return this.url.put(`https://67d293ba90e0670699be2925.mockapi.io/user/${id}`, data);
+  }
+
+
 
 
 

@@ -1,0 +1,89 @@
+<div class="d-flex">
+  <!-- Sidebar -->
+    <div id="sidebar" class="bg-dark text-white vh-100 p-3">
+        <h4 class="text-center mb-4">Admin Panel</h4>
+        <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/admin-dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/manage-product">Manage Products</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/getcategories">Manage Categories</a>
+            </li>
+            <!--<li class="nav-item mb-2">
+          <a class="nav-link sidebar-link" routerLink="/orders">Orders</a>
+        </li>-->
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/getusers">Manage Users</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/app-add-voucher">Manage voucher</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/app-order">Manage order</a>
+            </li>
+            <li class="nav-item mb-2">
+                <a class="nav-link sidebar-link" routerLink="/" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="p-4">
+    <h3 class="mb-4 text-center">{{ isEditMode ? 'Edit Voucher' : 'Add Voucher' }}</h3>
+
+    <form id="voucherFormSection" (ngSubmit)="addVoucher()" #voucherForm="ngForm" class="shadow p-4 rounded bg-white border">
+      <div class="form-group mb-3">
+        <label class="fw-bold">Voucher Code</label>
+        <input type="text" [(ngModel)]="voucher.voucher" name="voucher" required class="form-control" placeholder="Enter voucher code">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="fw-bold">Discount %</label>
+        <input type="number" [(ngModel)]="voucher.discount" name="discount" required class="form-control" placeholder="Enter discount">
+      </div>
+
+      <div class="form-group mb-3">
+        <label class="fw-bold">Apply To</label>
+        <select class="form-control" [(ngModel)]="voucher.userId" name="userId">
+          <option value="all">All Users</option>
+          <option *ngFor="let user of users" [value]="user.ID">{{ user.name }}</option>
+        </select>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-primary" type="submit">{{ isEditMode ? 'Update Voucher' : 'Add Voucher' }}</button>
+        <button class="btn btn-secondary" type="button" (click)="resetForm()" *ngIf="isEditMode">Cancel Edit</button>
+      </div>
+    </form>
+
+    <hr class="my-5">
+
+    <h4 class="mb-4 text-center"  style="color: #ffb6c1;">All Vouchers</h4><br />
+    <table class="table table-bordered table-hover bg-white shadow">
+        <thead style="background-color: #FFB6C1 !important; color: white !important; border: none;  transition: transform 0.2s;">
+            <tr>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none;  transition: transform 0.2s;">#</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none;  transition: transform 0.2s;">Voucher Code</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none;  transition: transform 0.2s;">Discount</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none;  transition: transform 0.2s;">Assigned To</th>
+                <th style="background-color: #FFB6C1 !important; color: white !important; border: none;  transition: transform 0.2s;">Actions</th>
+            </tr>
+        </thead>
+      <tbody>
+        <tr *ngFor="let v of vouchers; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ v.voucher }}</td>
+          <td>{{ v.discount }}%</td>
+          <td>{{ getUserNameById(v.userId) }}</td>
+          <td>
+            <button class="btn btn-sm btn-warning me-2" (click)="editVoucher(v)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteVoucher(v.id)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
