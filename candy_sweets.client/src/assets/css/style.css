@@ -2593,7 +2593,7 @@ i:before {
 
 .discover_menu_area:before {
   content: "";
-  background: url(../img/menu-left.png) no-repeat scroll center center;
+/*  background: url(../img/menu-left.png) no-repeat scroll center center;*/
   width: 260px;
   height: 480px;
   position: absolute;
