@@ -75,6 +75,7 @@
     <hr class="mt-0 mb-4">
     <div class="row" *ngIf="user">
       <!-- Profile Picture Section -->
+      <!-- Profile Picture Section -->
       <div class="col-xl-4">
         <div class="card mb-4 mb-xl-0">
           <div class="card-header">Profile Picture</div>
@@ -83,15 +84,38 @@
                  [src]="user.image"
                  alt="User Image">
             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+            <form #ChoseProfileIMAGE="ngForm" (ngSubmit)="updateimg()">
+              <button type="submit" class="btn btn-primary" style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;" (click)="openImagePopup()">Choose Image</button>
+            </form>
           </div>
         </div>
       </div>
+     
+
+      <!-- Popup Modal -->
+      <div class="modal" *ngIf="isPopupVisible">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5>Select an Image</h5>
+              <button type="button" class="close-btn" (click)="closeImagePopup()">X</button>
+            </div>
+            <div class="modal-body">
+              <div class="image-grid">
+                <img *ngFor="let img of imageOptions" [src]="img" alt="Selectable Image" class="image-option" (click)="selectImage(img)">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <!-- Account Details Section -->
       <div class="col-xl-8">
         <div class="card mb-4">
           <div class="card-header">Account Details</div>
           <div class="card-body">
-            <form  #editProfileForm="ngForm" (ngSubmit)="updateProfile()">
+            <form #editProfileForm="ngForm" (ngSubmit)="updateProfile()">
               <!-- Form Group (Username) -->
               <div class="mb-3">
                 <label class="small mb-1" for="inputUsername">Username</label>
@@ -99,7 +123,7 @@
                        id="inputUsername"
                        type="text"
                        placeholder="Enter your username"
-                      [(ngModel)]="user.name" name="name" required >
+                       [(ngModel)]="user.name" name="name" required>
               </div>
               <!-- Form Row -->
               <div class="row gx-3 mb-3">
@@ -110,8 +134,7 @@
                          id="inputFirstName"
                          type="text"
                          placeholder="Enter your Organization name"
-
-                         [(ngModel)]="user.OrganizationName" name="OrganizationName" required >
+                         [(ngModel)]="user.OrganizationName" name="OrganizationName" required>
                 </div>
                 <!-- Last Name -->
                 <div class="col-md-6">
@@ -119,9 +142,8 @@
                   <input class="form-control"
                          id="inputLastName"
                          type="text"
-                         placeholder="Enter your last name"
-                         value="{{ user.paymentMethods }}"
-                         readonly>
+                         placeholder="Enter your Payment Method"
+                         [(ngModel)]="user.paymentMethods" name="paymentMethods" required>
                 </div>
               </div>
               <!-- Organization and Location -->
@@ -140,7 +162,7 @@
                          id="inputLocation"
                          type="text"
                          placeholder="Enter your location"
-                        [(ngModel)]="user.address" name="address" required>
+                         [(ngModel)]="user.address" name="address" required>
                 </div>
               </div>
               <!-- Email -->
@@ -161,16 +183,15 @@
                          id="inputPhone"
                          type="tel"
                          placeholder="Enter your phone number"
-                        [(ngModel)]="user.phone" name="phone" required>
+                         [(ngModel)]="user.phone" name="phone" required>
                 </div>
                 <div class="col-md-6">
                   <label class="small mb-1" for="inputBirthday">Birthday</label>
                   <input class="form-control"
                          id="inputBirthday"
                          type="text"
-                         name="birthday"
                          placeholder="Enter your birthday"
-                        [(ngModel)]="user.BirthDate" name="BirthDate" required>
+                         [(ngModel)]="user.BirthDate" name="BirthDate" required>
                 </div>
               </div>
               <button type="submit" class="btn btn-primary" style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;">Save Changes</button>
