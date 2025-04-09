@@ -127,43 +127,97 @@
               </div>
               <!-- Form Row -->
               <div class="row gx-3 mb-3">
-                <!-- First Name -->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputFirstName">Organization Name </label>
-                  <input class="form-control"
-                         id="inputFirstName"
-                         type="text"
-                         placeholder="Enter your Organization name"
-                         [(ngModel)]="user.OrganizationName" name="OrganizationName" required>
-                </div>
-                <!-- Last Name -->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputLastName">Payment Methods</label>
-                  <input class="form-control"
-                         id="inputLastName"
-                         type="text"
-                         placeholder="Enter your Payment Method"
-                         [(ngModel)]="user.paymentMethods" name="paymentMethods" required>
-                </div>
+                  <!-- First Name -->
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputFirstName">Organization Name </label>
+                      <input class="form-control"
+                             id="inputFirstName"
+                             type="text"
+                             placeholder="Enter your Organization name"
+                             [(ngModel)]="user.OrganizationName" name="OrganizationName" required>
+                  </div>
+                  <!-- Last Name -->
+                  <div class="col-md-6">
+                      <label class="small mb-1">Payment Method</label>
+                      <select class="form-control" [(ngModel)]="user.paymentMethod" name="paymentMethod" style="height: auto;" required>
+                          <option value="">Select a method</option>
+                          <option value="credit">Credit Card</option>
+                          <option value="orange">Orange Money</option>
+                      </select>
+                  </div>
+
+                  <!-- Credit Card Fields -->
+                  <div *ngIf="user.paymentMethod === 'credit'" class="col-md-12 mt-3">
+                      <div class="form-group">
+                          <label>Card Number</label>
+                          <input type="text"
+                                 class="form-control"
+                                 placeholder="Enter 16-digit card number"
+                                 maxlength="16"
+                                 pattern="\\d{16}"
+                                 [(ngModel)]="user.cardNumber"
+                                 name="cardNumber"
+                                 required>
+                      </div>
+
+                      <div class="form-group mt-2">
+                          <label>Expiry Date</label>
+                          <input type="month"
+                                 class="form-control"
+                                 [(ngModel)]="user.expiryDate"
+                                 name="expiryDate"
+                                 required>
+                      </div>
+
+                      <div class="form-group mt-2">
+                          <label>CVV</label>
+                          <input type="password"
+                                 class="form-control"
+                                 placeholder="3-digit CVV"
+                                 maxlength="3"
+                                 pattern="\\d{3}"
+                                 [(ngModel)]="user.cvv"
+                                 name="cvv"
+                                 required>
+                      </div>
+                  </div>
+
+                  <!-- Orange Money Field -->
+                  <div *ngIf="user.paymentMethod === 'orange'" class="col-md-12 mt-3">
+                      <label>Orange Money Number</label>
+                      <input type="text"
+                             class="form-control"
+                             [(ngModel)]="user.orangeNumber"
+                             name="orangeNumber"
+                             [value]="'0777077970'"
+                             readonly>
+                  </div>
+
               </div>
               <!-- Organization and Location -->
               <div class="row gx-3 mb-3">
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputOrgName"> Gender</label>
-                  <input class="form-control"
-                         id="inputOrgName"
-                         type="text"
-                         placeholder="Enter your Gender name"
-                         [(ngModel)]="user.Gender" name="Gender" required value="I prefer not to say">
-                </div>
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputLocation">Location</label>
-                  <input class="form-control"
-                         id="inputLocation"
-                         type="text"
-                         placeholder="Enter your location"
-                         [(ngModel)]="user.address" name="address" required>
-                </div>
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputOrgName">Gender</label>
+                      <select class="form-control"
+                              id="inputOrgName"
+                              [(ngModel)]="user.Gender"
+                              name="Gender"
+                              required style="height: auto;">
+                          <option value="">Select your gender</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="I prefer not to say">I prefer not to say</option>
+                      </select>
+                  </div>
+
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputLocation">Location</label>
+                      <input class="form-control"
+                             id="inputLocation"
+                             type="text"
+                             placeholder="Enter your location"
+                             [(ngModel)]="user.address" name="address" required>
+                  </div>
               </div>
               <!-- Email -->
               <div class="mb-3">
@@ -177,22 +231,24 @@
               </div>
               <!-- Phone and Birthday -->
               <div class="row gx-3 mb-3">
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputPhone">Phone Number</label>
-                  <input class="form-control"
-                         id="inputPhone"
-                         type="tel"
-                         placeholder="Enter your phone number"
-                         [(ngModel)]="user.phone" name="phone" required>
-                </div>
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputBirthday">Birthday</label>
-                  <input class="form-control"
-                         id="inputBirthday"
-                         type="text"
-                         placeholder="Enter your birthday"
-                         [(ngModel)]="user.BirthDate" name="BirthDate" required>
-                </div>
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputPhone">Phone Number</label>
+                      <input class="form-control"
+                             id="inputPhone"
+                             type="tel"
+                             placeholder="Enter your phone number"
+                             [(ngModel)]="user.phone" name="phone" required>
+                  </div>
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputBirthday">Birthday</label>
+                      <input class="form-control"
+                             id="inputBirthday"
+                             type="date"
+                             [(ngModel)]="user.BirthDate"
+                             name="BirthDate"
+                             required>
+                  </div>
+
               </div>
               <button type="submit" class="btn btn-primary" style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;">Save Changes</button>
 
