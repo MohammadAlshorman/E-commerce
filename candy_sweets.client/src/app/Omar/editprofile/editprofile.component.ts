@@ -72,4 +72,8 @@ export class EditprofileComponent implements OnInit {
   goBackToProfile() {
     this.router.navigate(['/Home/Profile']);
   }
+  logout(): void {
+    this.user_api.logout();
+    this.router.navigate(['/Home/Login']);
+  }
 }

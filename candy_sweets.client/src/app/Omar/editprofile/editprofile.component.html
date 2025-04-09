@@ -1,4 +1,4 @@
-<div class="EditProfile_container">
+<!--<div class="EditProfile_container">
   <div class="container">
     <h1>Edit Profile</h1>
     <form #editProfileForm="ngForm" (ngSubmit)="updateProfile()">
@@ -58,4 +58,130 @@
       </div>
     </form>
   </div>
+</div>-->
+
+<div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f195b2, #303339); ">
+
+
+
+  <div class="container-xl px-4 mt-4" style="padding-top: 5.5rem !important; font-family: 'Poppins', sans-serif;">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+      <a class="nav-link active ms-0" routerLink="/Home/EditProfile">Edit Profile</a>
+      <a class="nav-link" routerLink="/Home/User_History">Order History</a>
+      <a class="nav-link" (click)="resetPassword()">Reset Password</a>
+      <a class="nav-link" (click)="logout()">Logout</a>
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row" *ngIf="user">
+      <!-- Profile Picture Section -->
+      <div class="col-xl-4">
+        <div class="card mb-4 mb-xl-0">
+          <div class="card-header">Profile Picture</div>
+          <div class="card-body text-center">
+            <img class="img-account-profile rounded-circle mb-2"
+                 [src]="user.image"
+                 alt="User Image">
+            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+          </div>
+        </div>
+      </div>
+      <!-- Account Details Section -->
+      <div class="col-xl-8">
+        <div class="card mb-4">
+          <div class="card-header">Account Details</div>
+          <div class="card-body">
+            <form  #editProfileForm="ngForm" (ngSubmit)="updateProfile()">
+              <!-- Form Group (Username) -->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputUsername">Username</label>
+                <input class="form-control"
+                       id="inputUsername"
+                       type="text"
+                       placeholder="Enter your username"
+                      [(ngModel)]="user.name" name="name" required >
+              </div>
+              <!-- Form Row -->
+              <div class="row gx-3 mb-3">
+                <!-- First Name -->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputFirstName">Organization Name </label>
+                  <input class="form-control"
+                         id="inputFirstName"
+                         type="text"
+                         placeholder="Enter your Organization name"
+
+                         [(ngModel)]="user.OrganizationName" name="OrganizationName" required >
+                </div>
+                <!-- Last Name -->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputLastName">Payment Methods</label>
+                  <input class="form-control"
+                         id="inputLastName"
+                         type="text"
+                         placeholder="Enter your last name"
+                         value="{{ user.paymentMethods }}"
+                         readonly>
+                </div>
+              </div>
+              <!-- Organization and Location -->
+              <div class="row gx-3 mb-3">
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputOrgName"> Gender</label>
+                  <input class="form-control"
+                         id="inputOrgName"
+                         type="text"
+                         placeholder="Enter your Gender name"
+                         [(ngModel)]="user.Gender" name="Gender" required value="I prefer not to say">
+                </div>
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputLocation">Location</label>
+                  <input class="form-control"
+                         id="inputLocation"
+                         type="text"
+                         placeholder="Enter your location"
+                        [(ngModel)]="user.address" name="address" required>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputEmailAddress">Email Address</label>
+                <input class="form-control"
+                       id="inputEmailAddress"
+                       type="email"
+                       placeholder="Enter your email address"
+                       value="{{ user.email }}"
+                       readonly>
+              </div>
+              <!-- Phone and Birthday -->
+              <div class="row gx-3 mb-3">
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputPhone">Phone Number</label>
+                  <input class="form-control"
+                         id="inputPhone"
+                         type="tel"
+                         placeholder="Enter your phone number"
+                        [(ngModel)]="user.phone" name="phone" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputBirthday">Birthday</label>
+                  <input class="form-control"
+                         id="inputBirthday"
+                         type="text"
+                         name="birthday"
+                         placeholder="Enter your birthday"
+                        [(ngModel)]="user.BirthDate" name="BirthDate" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;">Save Changes</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+

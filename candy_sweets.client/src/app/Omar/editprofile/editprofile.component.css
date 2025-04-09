@@ -1,15 +1,15 @@
 /* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
 
-.EditProfile_container {
+/*.EditProfile_container {
   font-family: 'Poppins', sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background: linear-gradient(135deg, #f195b2, #303339); /* Gradient background */
-}
+  background: linear-gradient(135deg, #f195b2, #303339);*/ /* Gradient background */
+/*}
 
 .container {
   max-width: 700px;
@@ -17,8 +17,8 @@
   background-color: #fff;
   padding: 30px;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
-}
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);*/ /* Softer shadow */
+/*}
 
   .container h1 {
     font-size: 30px;
@@ -36,8 +36,8 @@
   font-weight: 600;
   margin-bottom: 8px;
   display: block;
-  color: #FF69B4; /* Bright pink color for labels */
-}
+  color: #FF69B4;*/ /* Bright pink color for labels */
+/*}
 
 .container input, .container select {
   height: 45px;
@@ -69,22 +69,219 @@ button {
 }
 
   button.btn-primary {
-    background: linear-gradient(135deg, #f195b2, #303339); /* Updated gradient */
-  }
+    background: linear-gradient(135deg, #f195b2, #303339);*/ /* Updated gradient */
+  /*}
 
     button.btn-primary:hover {
       background: linear-gradient(-135deg, #f195b2, #303339);
     }
 
   button.btn-secondary {
-    background: #FF69B4; /* Solid color for secondary button */
-  }
+    background: #FF69B4;*/ /* Solid color for secondary button */
+  /*}
 
     button.btn-secondary:hover {
-      background: #ff4081; /* Lighter shade on hover */
-    }
+      background: #ff4081;*/ /* Lighter shade on hover */
+    /*}
 
 small.text-muted {
   font-size: 12px;
   color: #999;
+}*/
+
+
+/*body {
+  margin-top: 20px;
+  background-color: #f2f6fc;
+  color: #69707a;
 }
+
+.img-account-profile {
+  height: 10rem;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.card {
+  box-shadow: 0 0.15rem 1.75rem 0 rgb(33 40 50 / 15%);
+}
+
+  .card .card-header {
+    font-weight: 500;
+  }
+
+.card-header:first-child {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header {
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 40, 50, 0.03);
+  border-bottom: 1px solid rgba(33, 40, 50, 0.125);
+}
+
+.form-control, .dataTable-input {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c5ccd6;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.nav-borders .nav-link.active {
+  color: #0061f2;
+  border-bottom-color: #0061f2;
+}
+
+.nav-borders .nav-link {
+  color: #69707a;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.img-account-profile {
+  height: 10rem;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.card {
+  /* Updated to match profile theme shadow */
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* ← changed */
+  background: #fff;
+  border-radius: 10px;
+}
+
+  /* --- Header Styling --- */
+  .card .card-header {
+    font-weight: 500;
+    background: linear-gradient(135deg, #f195b2, #303339); /* ← changed to pink gradient */
+    color: white; /* ← changed to match pink theme text contrast */
+  }
+
+.card-header:first-child {
+  border-radius: 0.35rem 0.35rem 0 0;
+}
+
+.card-header {
+  padding: 1rem 1.35rem;
+  margin-bottom: 0;
+  border-bottom: 1px solid rgba(255, 105, 180, 0.3); /* ← light pink border */
+}
+
+/* --- Input Fields --- */
+.form-control,
+.dataTable-input {
+  display: block;
+  width: 100%;
+  padding: 0.875rem 1.125rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1;
+  color: #69707a;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #FF69B4; /* ← changed to pink border */
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* --- Navigation Links --- */
+.nav-borders .nav-link.active {
+  color: #FF1493; /* ← updated from blue to hot pink */
+  border-bottom-color: #FF1493; /* ← updated border to match */
+}
+
+.nav-borders .nav-link {
+  color: #ffffff;
+  border-bottom-width: 0.125rem;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+/* --- Optional Pink Button (if needed) --- */
+.pink-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #f195b2, #303339); /* ← main gradient */
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  line-height: 45px;
+  margin-right: 20px;
+  border: none;
+  text-align: center;
+}
+
+  .pink-button:hover {
+    background: linear-gradient(-135deg, #f195b2, #303339); /* ← reverse gradient */
+  }

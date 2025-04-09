@@ -134,7 +134,8 @@ export class RegisterComponent {
       Gender: this.genderInput,
       BirthDate: 'waiting',
       paymentMethods: 'waiting',
-      role: 'user'
+      role: 'user',
+      OrganizationName:'waiting'
     };
 
     this.user_api.Post_User_Register(newUser).subscribe(() => {

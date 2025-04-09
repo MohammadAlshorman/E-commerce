@@ -1,11 +1,10 @@
-<div class="Profile_container">
+<!--<div class="Profile_container">
   <div class="container" *ngIf="user">
-    <!--<div class="profile-header">
-    <img [src]="user.image" alt="User Image" class="profile-image">
-    <h1 class="title">User Profile</h1>
-  </div>-->
-
-    <div class="user-details">
+<div class="profile-header">
+  <img [src]="user.image" alt="User Image" class="profile-image">
+  <h1 class="title">User Profile</h1>
+</div>
+<div class="user-details">
       <div class="detail-box">
         <img [src]="user.image" alt="User Image" class="profile-image">
       </div>
@@ -34,4 +33,229 @@
       <a routerLink="/Home/User_History" class="pink-button">My Orders</a>
     </div>
   </div>
+</div>-->
+
+
+
+
+<div style="width: 100%; height: 100%; background: linear-gradient(135deg, #f195b2, #303339); ">
+
+
+
+  <div class="container-xl px-4 mt-4" style="padding-top: 5.5rem !important; font-family: 'Poppins', sans-serif;">
+    <!-- Account page navigation-->
+    <nav class="nav nav-borders">
+      <a class="nav-link active ms-0" routerLink="/Home/Profile">Profile</a>
+      <a class="nav-link" routerLink="/Home/User_History">Order History</a>
+      <a class="nav-link" (click)="resetPassword()">Reset Password</a>
+      <a class="nav-link" (click)="logout()">Logout</a>
+    </nav>
+    <hr class="mt-0 mb-4">
+    <div class="row" *ngIf="user">
+      <!-- Profile Picture Section -->
+      <div class="col-xl-4">
+        <div class="card mb-4 mb-xl-0">
+          <div class="card-header">Profile Picture</div>
+          <div class="card-body text-center">
+            <img class="img-account-profile rounded-circle mb-2"
+                 [src]="user.image"
+                 alt="User Image">
+            <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+          </div>
+        </div>
+      </div>
+      <!-- Account Details Section -->
+      <div class="col-xl-8">
+        <div class="card mb-4">
+          <div class="card-header">Account Details</div>
+          <div class="card-body">
+            <form>
+              <!-- Form Group (Username) -->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputUsername">Username</label>
+                <input class="form-control"
+                       id="inputUsername"
+                       type="text"
+                       placeholder="Enter your username"
+                       value="{{ user.name }}"
+                       readonly>
+              </div>
+              <!-- Form Row -->
+              <div class="row gx-3 mb-3">
+                <!-- First Name -->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputFirstName">Organization Name </label>
+                  <input class="form-control"
+                         id="inputFirstName"
+                         type="text"
+                         placeholder="Enter your first name"
+                         value="{{ user.OrganizationName }}"
+                         readonly>
+                </div>
+                <!-- Last Name -->
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputLastName">Payment Methods</label>
+                  <input class="form-control"
+                         id="inputLastName"
+                         type="text"
+                         placeholder="Enter your last name"
+                         value="{{ user.paymentMethods }}"
+                         readonly>
+                </div>
+              </div>
+              <!-- Organization and Location -->
+              <div class="row gx-3 mb-3">
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputOrgName"> Gender</label>
+                  <input class="form-control"
+                         id="inputOrgName"
+                         type="text"
+                         placeholder="Enter your organization name"
+                         value="{{user.Gender}}"
+                         readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputLocation">Location</label>
+                  <input class="form-control"
+                         id="inputLocation"
+                         type="text"
+                         placeholder="Enter your location"
+                         value="{{user.address}}"
+                         readonly>
+                </div>
+              </div>
+              <!-- Email -->
+              <div class="mb-3">
+                <label class="small mb-1" for="inputEmailAddress">Email Address</label>
+                <input class="form-control"
+                       id="inputEmailAddress"
+                       type="email"
+                       placeholder="Enter your email address"
+                       value="{{ user.email }}"
+                       readonly>
+              </div>
+              <!-- Phone and Birthday -->
+              <div class="row gx-3 mb-3">
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputPhone">Phone Number</label>
+                  <input class="form-control"
+                         id="inputPhone"
+                         type="tel"
+                         placeholder="Enter your phone number"
+                         value="{{user.phone}}"
+                         readonly>
+                </div>
+                <div class="col-md-6">
+                  <label class="small mb-1" for="inputBirthday">Birthday</label>
+                  <input class="form-control"
+                         id="inputBirthday"
+                         type="text"
+                         name="birthday"
+                         placeholder="Enter your birthday"
+                         value="{{user.BirthDate}}"
+                         readonly>
+                </div>
+              </div>
+              <button class="btn btn-primary" type="button" (click)="EditProfile()" style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;">Edit My Profile</button>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+
+
+
+
+
+<!--<div class="container-xl px-4 mt-4">-->
+<!-- Account page navigation-->
+<!--<nav class="nav nav-borders">
+  <a class="nav-link active ms-0" routerLink="/Home/EditProfile">Edit Profile</a>
+  <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-billing-page" target="__blank">Billing</a>
+  <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-profile-security-page" target="__blank">Security</a>
+  <a class="nav-link" href="https://www.bootdey.com/snippets/view/bs5-edit-notifications-page" target="__blank">Notifications</a>
+</nav>
+<hr class="mt-0 mb-4">
+<div class="row">
+  <div class="col-xl-4">-->
+<!-- Profile picture card-->
+<!--<div class="card mb-4 mb-xl-0">
+  <div class="card-header">Profile Picture</div>
+  <div class="card-body text-center">-->
+<!-- Profile picture image-->
+<!--<img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">-->
+<!-- Profile picture help block-->
+<!--<div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>-->
+<!-- Profile picture upload button-->
+<!--<button class="btn btn-primary" type="button">Upload new image</button>
+    </div>
+  </div>
+</div>
+<div class="col-xl-8">-->
+<!-- Account details card-->
+<!--<div class="card mb-4">
+  <div class="card-header">Account Details</div>
+  <div class="card-body">
+    <form>-->
+<!-- Form Group (username)-->
+<!--<div class="mb-3">
+  <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
+  <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
+</div>-->
+<!-- Form Row-->
+<!--<div class="row gx-3 mb-3">-->
+<!-- Form Group (first name)-->
+<!--<div class="col-md-6">
+  <label class="small mb-1" for="inputFirstName">First name</label>
+  <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie">
+</div>-->
+<!-- Form Group (last name)-->
+<!--<div class="col-md-6">
+    <label class="small mb-1" for="inputLastName">Last name</label>
+    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna">
+  </div>
+</div>-->
+<!-- Form Row        -->
+<!--<div class="row gx-3 mb-3">-->
+<!-- Form Group (organization name)-->
+<!--<div class="col-md-6">
+  <label class="small mb-1" for="inputOrgName">Organization name</label>
+  <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="Start Bootstrap">
+</div>-->
+<!-- Form Group (location)-->
+<!--<div class="col-md-6">
+    <label class="small mb-1" for="inputLocation">Location</label>
+    <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
+  </div>
+</div>-->
+<!-- Form Group (email address)-->
+<!--<div class="mb-3">
+  <label class="small mb-1" for="inputEmailAddress">Email address</label>
+  <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+</div>-->
+<!-- Form Row-->
+<!--<div class="row gx-3 mb-3">-->
+<!-- Form Group (phone number)-->
+<!--<div class="col-md-6">
+  <label class="small mb-1" for="inputPhone">Phone number</label>
+  <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="555-123-4567">
+</div>-->
+<!-- Form Group (birthday)-->
+<!--<div class="col-md-6">
+    <label class="small mb-1" for="inputBirthday">Birthday</label>
+    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="Enter your birthday" value="06/10/1988">
+  </div>
+</div>-->
+<!-- Save changes button-->
+<!--<button class="btn btn-primary" type="button">Save changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>-->

@@ -27,10 +27,14 @@ export class ProfileComponent {
       }
     });
   }
-  logout() {
-    this.user_api.clearUserId(); // Clear the user ID
-    alert('Logged out successfully!');
-    this.router.navigate(['login']); // Redirect to the login page
+  logout(): void {
+    this.user_api.logout();
+    this.router.navigate(['/Home/Login']);
   }
-
+  EditProfile() {
+    this.router.navigate(['/Home/EditProfile']);
+  }
+  resetPassword() {
+    this.router.navigate(['/Home/Reset']);
+  }
 }
