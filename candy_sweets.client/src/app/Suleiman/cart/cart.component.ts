@@ -66,14 +66,14 @@ export class CartComponent {
   }
   
   getSubPrice(): number {
-    return this.cartData.reduce((total: number, item: { Price: number; quantity: number; }) => {
-      return total + (item.Price * item.quantity);
+    return this.cartData.reduce((total: number, item: { price: number; quantity: number; }) => {
+      return total + (item.price * item.quantity);
     }, 0);
   }
   totalafterdiscount: number = 0;
   getTotalPrice(): number {
-    let total = this.cartData.reduce((total: number, item: { Price: number; quantity: number; }) => {
-      return total + (item.Price * item.quantity);
+    let total = this.cartData.reduce((total: number, item: { price: number; quantity: number; }) => {
+      return total + (item.price * item.quantity);
     }, 0);
     this.totalafterdiscount = total - this.discountValue;
     this.ser.carttotalprice.next(this.totalafterdiscount)

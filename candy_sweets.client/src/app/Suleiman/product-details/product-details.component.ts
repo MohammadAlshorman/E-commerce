@@ -57,25 +57,31 @@ export class ProductDetailsComponent {
   }
 
   addToCart(data: any) {
-    this.ser.addItemsToCart(data).subscribe(() => {
-      //Swal.fire('Product Has Been Added To Cart')
+    const productData = {
+      productId: this.prodata.id,
+      price: this.prodata.price,
+      quantity: data.quantity || 1  // افتراضي 1 إذا ما في قيمة
+    };
+
+    this.ser.addItemsToCart(productData).subscribe(() => {
       Swal.fire({
         title: 'Added to cart!',
         html: `
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <img src="https://cdn-icons-png.flaticon.com/512/3514/3514491.png" 
-             style="width: 100px; animation: bounce 1s infinite;color:pink;">
-      </div>
-      <p style="margin-top: 10px;">The product has been successfully added to the cart.</p>
-    `,
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <img src="https://cdn-icons-png.flaticon.com/512/3514/3514491.png" 
+              style="width: 100px; animation: bounce 1s infinite;color:pink;">
+        </div>
+        <p style="margin-top: 10px;">The product has been successfully added to the cart.</p>
+      `,
         showConfirmButton: false,
-        timer: 2500, // إغلاق تلقائي بعد 1.5 ثانية
+        timer: 2500,
         customClass: {
           popup: 'custom-swal-popup'
         }
       });
-    })
+    });
   }
+
   databycategoryid: any
   getProductByCategoryID() {
     this.ser.getAllProduct().subscribe((d) => {

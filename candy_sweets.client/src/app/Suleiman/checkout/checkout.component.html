@@ -57,7 +57,7 @@
           <div class="payment_list">
             <div class="price_single_cost">
               <h5>Prodcut <span>Total</span></h5>
-              <h5 *ngFor="let i of cartitems">{{getProductName(i.productId)}} x {{i.quantity}} <span>${{i.Price * i.quantity}}</span></h5>
+              <h5 *ngFor="let i of cartitems">{{getProductName(i.productId)}} x {{i.quantity}} <span>${{i.price * i.quantity}}</span></h5>
               <h4>Subtotal <span>${{priceafterdiscount}}</span></h4>
               <h5>Shipping And Handling<span class="text_f">Free Shipping</span></h5>
               <h3>Total <span>${{priceafterdiscount}}</span></h3>

@@ -57,39 +57,43 @@
       </thead>
       <tbody>
         <tr *ngFor="let user of Users">
-          <td>{{user.ID}}</td>
+          <td>{{ user.ID }}</td>
+
           <td>
             <img [src]="user.image" alt="User Image" width="100" height="100">
           </td>
-          <td>{{user.name}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.phone}}</td>
 
-
-          <td>{{user.password}}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.phone }}</td>
+          <td>{{ user.password }}</td>
 
           <td>
-            {{user.role}}
-            <button (click)="toggleUserRole(user)" class="btn btn-warning btn-sm ms-2">
-              {{ user.role.toLowerCase() === 'admin' ? 'Make User' : 'Make Admin' }}
+            {{ user.role }}
+            <!-- زر تغيير الدور إذا لم يكن السوبر أدمن -->
+            <ng-container *ngIf="user.email !== 'mhmdshhadhalshrman95@gmail.com'">
+              <button (click)="toggleUserRole(user)" class="btn btn-warning btn-sm ms-2">
+                {{ user.role.toLowerCase() === 'admin' ? 'Make User' : 'Make Admin' }}
+              </button>
+            </ng-container>
+            <!-- إشارة إلى أنه سوبر أدمن -->
+            <ng-container *ngIf="user.email === 'mhmdshhadhalshrman95@gmail.com'">
+              <span class="badge bg-success ms-2">Super Admin</span>
+            </ng-container>
+          </td>
+
+          <td>{{ user.Gender }}</td>
+
+          <td>
+            <!-- إخفاء زر الحذف للسوبر أدمن -->
+            <button *ngIf="user.email !== 'mhmdshhadhalshrman95@gmail.com'"
+                    (click)="deleteUsers(user.ID)" class="btn pink-button">
+              Delete
             </button>
+            <span *ngIf="user.email === 'mhmdshhadhalshrman95@gmail.com'" class="text-muted">Protected</span>
           </td>
-
-
-          <td>{{user.Gender}}</td>
-
-
-
-
-          <td>
-            <button (click)="deleteUsers(user.ID)" class="btn pink-button">Delete</button>
-
-
-          </td>
-
-
-
         </tr>
+
       </tbody>
     </table>
   </div>

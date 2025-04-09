@@ -115,23 +115,22 @@ export class EditprofileComponent implements OnInit {
       this.user_api.Update_User(this.userId, this.user).subscribe(() => {
         Swal.fire({
           icon: 'success',
-          title: 'Important Note:To Update Profile Image !',
-          text: 'After choosing the image you want rember to click on save change button to save your new profile image',
+          title: 'Profile Image Updated',
+          text: 'Your profile image has been updated successfully!',
           confirmButtonColor: '#FF69B4'
-        }).then(() => {
-          this.router.navigate(['/Home/EditProfile']); // Redirect to profile page
         });
       }, (error) => {
         console.error('Error updating profile:', error);
         Swal.fire({
           icon: 'error',
           title: 'Error',
-          text: 'There was an issue updating your profile. Please try again.',
+          text: 'There was an issue updating your profile image. Please try again.',
           confirmButtonColor: '#FF69B4'
         });
       });
     }
   }
+
 
 
 

@@ -70,7 +70,6 @@
       <a class="nav-link active ms-0" routerLink="/Home/EditProfile">Edit Profile</a>
       <a class="nav-link" routerLink="/Home/User_History">Order History</a>
       <a class="nav-link" (click)="resetPassword()">Reset Password</a>
-      <a class="nav-link" (click)="logout()">Logout</a>
     </nav>
     <hr class="mt-0 mb-4">
     <div class="row" *ngIf="user">
@@ -85,8 +84,20 @@
                  alt="User Image">
             <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
             <form #ChoseProfileIMAGE="ngForm" (ngSubmit)="updateimg()">
-              <button type="submit" class="btn btn-primary" style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;" (click)="openImagePopup()">Choose Image</button>
+              <input type="text"
+                     class="form-control mb-2"
+                     placeholder="Enter Image URL"
+                     [(ngModel)]="user.image"
+                     name="image"
+                     required />
+
+              <button type="submit"
+                      class="btn btn-primary"
+                      style="--bs-btn-bg: #f195b2 !important; --bs-btn-font-weight: 450 !important;">
+                Update Image
+              </button>
             </form>
+
           </div>
         </div>
       </div>

@@ -33,9 +33,9 @@
             </td>
             <!--getProductName(i.productId)-->
             <td>{{ getProductName(i.productId) }}</td>
-            <td>${{i.Price}}</td>
+            <td>${{i.price}}</td>
             <td>{{i.quantity}}</td>
-            <td>${{i.Price * i.quantity}}</td>
+            <td>${{i.price * i.quantity}}</td>
             <td><button class="btn btn-danger" (click)="deleteitemfromcart(i.id)">Remove</button></td>
           </tr>
           <tr>

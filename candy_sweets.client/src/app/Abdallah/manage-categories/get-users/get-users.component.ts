@@ -88,6 +88,17 @@ export class GetUsersComponent {
 
 
   toggleUserRole(user: any) {
+    // تحقق إذا المستخدم هو السوبر أدمن
+    if (user.email === 'mhmdshhadhalshrman95@gmail.com') {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Access Denied',
+        text: 'You cannot change the role of the Super Admin.',
+        confirmButtonColor: '#FF69B4'
+      });
+      return;
+    }
+
     const newRole = user.role.toLowerCase() === 'admin' ? 'user' : 'admin';
     const message = newRole === 'admin' ? `promote ${user.name} to Admin` : `demote ${user.name} to User`;
 
@@ -104,14 +115,14 @@ export class GetUsersComponent {
         const updatedUser = { ...user, role: newRole };
         this.ser.updateUser(user.ID, updatedUser).subscribe(() => {
           this.showAlert(`${user.name} is now a ${newRole}!`, 'success');
-          this.getData(); 
-        },
-          error => {
-            this.showAlert('Error updating role!', 'error');
-          });
+          this.getData();
+        }, error => {
+          this.showAlert('Error updating role!', 'error');
+        });
       }
     });
   }
+
 
 
 
