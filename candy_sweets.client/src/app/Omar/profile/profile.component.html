@@ -80,26 +80,28 @@
               </div>
               <!-- Form Row -->
               <div class="row gx-3 mb-3">
-                <!-- First Name -->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputFirstName">Organization Name </label>
-                  <input class="form-control"
-                         id="inputFirstName"
-                         type="text"
-                         placeholder="Enter your first name"
-                         value="{{ user.OrganizationName }}"
-                         readonly>
-                </div>
-                <!-- Last Name -->
-                <div class="col-md-6">
-                  <label class="small mb-1" for="inputLastName">Payment Methods</label>
-                  <input class="form-control"
-                         id="inputLastName"
-                         type="text"
-                         placeholder="Enter your last name"
-                         value="{{ user.paymentMethods }}"
-                         readonly>
-                </div>
+                  <!-- First Name -->
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputFirstName">Organization Name </label>
+                      <input class="form-control"
+                             id="inputFirstName"
+                             type="text"
+                             placeholder="Enter your first name"
+                             value="{{ user.OrganizationName }}"
+                             readonly>
+                  </div>
+                  <!-- Last Name -->
+                  <div class="col-md-6">
+                      <label class="small mb-1" for="inputLastName">Payment Method</label>
+                      <input class="form-control"
+                             id="inputLastName"
+                             type="text"
+                             placeholder="Selected Payment Method"
+                             [(ngModel)]="user.paymentMethod"
+                             name="paymentMethod"
+                             readonly>
+                  </div>
+
               </div>
               <!-- Organization and Location -->
               <div class="row gx-3 mb-3">
