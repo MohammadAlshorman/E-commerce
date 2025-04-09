@@ -18,7 +18,7 @@
           <tbody>
             <tr *ngFor="let order of userOrders">
               <td>{{ order.id }}</td>
-              <td>{{ order.paymentMethodID }}</td>
+              <td>{{ order.paymentMethod }}</td>
               <td>${{ order.totalAmount }}</td>
               <td>{{ order.createAt | date: 'medium' }}</td>
             </tr>

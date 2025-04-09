@@ -30,7 +30,7 @@
             <h5>Price :<span>${{prodata.price}}</span></h5>
             <div class="quantity_box">
               <label for="quantity">Quantity :</label>
-              <input type="number" name="quantity" ngModel value="1" id="quantity" required>
+              <input type="number" name="quantity" ngModel value="1" id="quantity" min="1" max="12" required  placeholder="1">
               <input type="number" name="price" [value]="prodata.price" hidden>
               <input type="hidden" name="productId" [(ngModel)]="prodata.id" />
             </div>
